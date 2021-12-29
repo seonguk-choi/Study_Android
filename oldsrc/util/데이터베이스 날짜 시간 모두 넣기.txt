@@ -1,0 +1,6 @@
+insert into s_board 
+(s_title, s_content, s_id, updatetime) 
+values ('나는 배가 고프다e3', '뻥이지롱3', 'tt1', to_char(sysdate, 'yyyy/mm/dd hh24:mi:ss'));
+
+// 날짜 데이터에 시간이 들어가지 않을때 데이터베이스 아래와 같이 바꿔줌
+alter session set nls_date_format = 'yyyy/MM/dd hh24:mi:ss';

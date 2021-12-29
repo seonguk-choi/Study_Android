@@ -1,0 +1,8 @@
+1. Activity  startActivityForResult 호출
+   그냥 startActivityForResult(intent,REQUEST_FOR_ACTIVITY_CODE);
+
+2. Fragment 에서 startActivityForResult 호출
+   mContext.startActivityForResult(intent,REQUEST_FOR_ACTIVITY_CODE);
+
+3. Adapter 에서 startActivityForResult 호출
+((Activity) mContext).startActivityForResult(intent,REQUEST_FOR_ACTIVITY_CODE);
