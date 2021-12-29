@@ -1,0 +1,41 @@
+readJsonStream(inputStream);
+
+====================================================
+
+public void readJsonStream(InputStream inputStream) throws IOException {
+        JsonReader reader = new JsonReader(new InputStreamReader(inputStream, "UTF-8"));
+        try {
+            reader.beginArray();
+            while (reader.hasNext()) {
+                memberDTOArrayList.add(readMessage(reader));
+            }
+            reader.endArray();
+        } finally {
+            reader.close();
+        }
+    }
+
+    public MemberDTO readMessage(JsonReader reader) throws IOException {
+        String id = "", name = "", phonenum = "", address = "", imgpath = "";
+
+        reader.beginObject();
+        while (reader.hasNext()) {
+            String readStr = reader.nextName();
+            if (readStr.equals("id")) {
+                id = reader.nextString();
+            } else if (readStr.equals("name")) {
+                name = reader.nextString();
+            } else if (readStr.equals("phonenumber")) {
+                phonenum = reader.nextString();
+            } else if (readStr.equals("address")) {
+                address = reader.nextString();
+            }else if (readStr.equals("filename")) {
+                imgpath = reader.nextString();
+            }else {
+                reader.skipValue();
+            }
+        }
+        reader.endObject();
+        Log.d(TAG, id + "," + name + "," + phonenum + "," + address + "," + imgpath);
+        return new MemberDTO(id, name, phonenum, address, imgpath);
+    }
