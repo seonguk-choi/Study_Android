@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="5dp"
+    android:orientation="vertical">
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youTubePlayerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    출처: https://haruple.tistory.com/161 [하루플스토리]
+    <TextView
+        android:id="@+id/rec5_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_marginRight="260dp"
+        android:fontFamily="@font/ibmplexsanslight"
+        android:text="꼭 가봐야할 강원내률 드라이브 여행"
+        android:textColor="#000000"
+        android:textSize="15dp" />
+    <TextView
+        android:id="@+id/rec5_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BY 킴스트래블"
+        android:layout_gravity="bottom"
+        android:textColor="#676767"
+        android:fontFamily="@font/ibmplexsanslight" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp">
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/eye"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="136"
+            android:textSize="10dp"
+            android:layout_gravity="bottom"
+            android:textColor="#676767"
+            android:fontFamily="@font/ibmplexsanslight" />
+    </LinearLayout>
+</LinearLayout>

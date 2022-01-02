@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        android:textStyle="bold"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="캠핑집들이 #13 카스텐 텐트 동계장박"
+        android:background="@drawable/text_round1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        android:textStyle="bold"
+        android:layout_marginRight="5dp"
+        android:text="캠핑 집들이 #10 해변 캠크닉"
+        android:background="@drawable/text_round1"/>
+</LinearLayout>
