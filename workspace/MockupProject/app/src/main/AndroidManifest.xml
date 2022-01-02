@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MockupProject">
         <activity
-            android:name=".MainActivity"
+            android:name=".transactivity.TransActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.transparent"/>
+        <activity
+            android:name=".activity.MainActivity"
             android:exported="false" />
         <activity
             android:name=".splash.SplashActivity"
@@ -22,5 +26,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

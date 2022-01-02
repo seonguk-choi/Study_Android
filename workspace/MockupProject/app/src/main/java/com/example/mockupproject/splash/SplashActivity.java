@@ -9,7 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import com.example.mockupproject.MainActivity;
+import com.example.mockupproject.activity.MainActivity;
 import com.example.mockupproject.R;
 
 public class SplashActivity extends AppCompatActivity {
