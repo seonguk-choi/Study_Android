@@ -6,43 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
-
-    <LinearLayout
+    <Button
+        android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="아이디"
-            android:textSize="20dp"
-            android:layout_margin="10dp"/>
-        <EditText
-            android:id="@+id/main_id"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:hint="아이디를 입력하세요"/>
-    </LinearLayout>
-    <LinearLayout
+        android:text="단순 알람띄우기"/>
+    <Button
+        android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="비밀번호"
-            android:textSize="20dp"
-            android:layout_margin="10dp"/>
-        <EditText
-            android:id="@+id/main_pw"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:hint="비밀번호를 입력하세요"/>
-    </LinearLayout>
-
+        android:text="단순 알람띄우고 클릭까지"/>
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="많은 글자 알람띄우기"/>
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AstTask"/>
 </LinearLayout>

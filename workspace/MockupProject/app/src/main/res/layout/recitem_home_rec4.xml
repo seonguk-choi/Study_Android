@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_rec2_linear"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginRight="5dp">
@@ -17,15 +18,16 @@
                 android:orientation="horizontal"
                 android:layout_marginBottom="10dp">
                 <TextView
-                    android:id="@+id/rec4_tv1"
+                    android:id="@+id/home_rec2_tv1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="울산 대왕암 공원"
                     android:textSize="15dp"
-                    android:layout_marginRight="260dp"
+                    android:layout_marginRight="245dp"
                     android:textColor="#000000"
                     android:fontFamily="@font/ibmplexsanslight"/>
                 <ImageView
+                    android:id="@+id/home_rec2_img1"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="end"
@@ -43,7 +45,7 @@
                     android:src="@drawable/spot"
                     android:layout_marginRight="5dp"/>
                 <TextView
-                    android:id="@+id/rec4_tv2"
+                    android:id="@+id/home_rec2_tv2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="울산 동구 일산동"
@@ -61,7 +63,7 @@
                     android:src="@drawable/fire"
                     android:layout_marginRight="5dp"/>
                 <TextView
-                    android:id="@+id/rec4_tv3"
+                    android:id="@+id/home_rec2_tv3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="―"
@@ -80,6 +82,7 @@
                     android:layout_weight="2"
                     android:layout_marginRight="5dp">
                     <ImageView
+                        android:id="@+id/home_rec2_img2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/spain1"
@@ -90,6 +93,7 @@
                         android:orientation="horizontal"
                         android:layout_margin="4dp">
                         <TextView
+                            android:id="@+id/home_rec2_tv4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="여행액티비티"
@@ -99,6 +103,7 @@
                             android:layout_marginRight="5dp"
                             android:background="@drawable/text_round2"/>
                         <TextView
+                            android:id="@+id/home_rec2_tv5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="백패킹,하이킹"
@@ -114,6 +119,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
                     <ImageView
+                        android:id="@+id/home_rec2_img3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -121,6 +127,7 @@
                         android:scaleType="fitXY"
                         android:layout_marginBottom="2dp"/>
                     <ImageView
+                        android:id="@+id/home_rec2_img4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -130,7 +137,7 @@
                 </LinearLayout>
             </LinearLayout>
             <TextView
-                android:id="@+id/rec4_tv4"
+                android:id="@+id/home_rec2_tv6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="해송과 기암괴석, 울기등대, 출렁다리 등이 있는 울산의 대표적인 공원...."

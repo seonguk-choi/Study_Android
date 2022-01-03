@@ -3,9 +3,11 @@ package com.example.newlastproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -24,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText edt_id, edt_pw;
     Button btn_login;
     ImageView kakaoimg;
-    Intent intent;
+    CheckBox chk_auto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,8 @@ public class LoginActivity extends AppCompatActivity {
         edt_pw = findViewById(R.id.edt_pw);
         btn_login = findViewById(R.id.btn1);
         kakaoimg = findViewById(R.id.kakaobtn);
+        chk_auto = findViewById(R.id.chk_auto);
+
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,10 +47,11 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (id.equals("aaa") && pw.equals("aaa")) {
                     Toast.makeText(LoginActivity.this, "로그인되었습니다.", Toast.LENGTH_SHORT).show();
-                    intent = new Intent(LoginActivity.this, MainActivity.class);
-                    intent.putExtra("id", id);
-                    intent.putExtra("pw", pw);
-                    startActivity(intent);
+                    //intent = new Intent(LoginActivity.this, MainActivity.class);
+                    //intent.putExtra("id", id);
+                    //intent.putExtra("pw", pw);
+                    //startActivity(intent);
+                    goMain();
                 } else {
                     Toast.makeText(LoginActivity.this, "아이디 또는 비밀번호를 확인하세요", Toast.LENGTH_SHORT).show();
                 }
@@ -69,9 +74,6 @@ public class LoginActivity extends AppCompatActivity {
                 if (oAuthToken != null) {
                     Toast.makeText(LoginActivity.this, "정보를 받아옴", Toast.LENGTH_SHORT).show();
                     getKakaoinfo();
-                    intent = new Intent(LoginActivity.this, MainActivity.class);
-
-                    startActivity(intent);
                 }
                 if (throwable != null) {
                     Toast.makeText(LoginActivity.this, "뭔가 오류가 남", Toast.LENGTH_SHORT).show();
@@ -108,7 +110,17 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
 
 
+
+        SharedPreferences preferences = getPreferences(LoginActivity.MODE_PRIVATE);
+        String id = preferences.getString("id",null);
+        String pw = preferences.getString("pw",null);
+        if(id != null && pw != null){
+            edt_id.setText(id);
+            edt_pw.setText(pw);
+            btn_login.performClick();
+        }
     }
+
     public void getKakaoinfo(){
         UserApiClient.getInstance().me((user, throwable) -> {
             if(throwable != null){
@@ -126,6 +138,46 @@ public class LoginActivity extends AppCompatActivity {
             }
             return null;
         });
+    }
+
+    //현재 상태 -> 일반 로그인 1, kakao 로그인 2, Google Login3, FaceBook Login 4..
+    //Naver Login 5
+    public void goMain(){
+        //is : boolean을 리턴하는 메소드의 명명규칙
+        //자동로그인이 체크 되었을 때는 아이디와 비밀번호를 공유자원에 넣어둔다.
+        //SharPrefrences <- 라는 공유자원에 id, pw <-?
+        //일반 로그인의 경우 Editext에 있는 정보, 소셜 로그인?
+        //DB 일반 id, pw ..., kakao, naver
+        if(chk_auto.isChecked()){
+            Toast.makeText(LoginActivity.this, "체크가 되었습니다.", Toast.LENGTH_SHORT).show();
+            SharedPreferences preferences = getPreferences(LoginActivity.MODE_PRIVATE);
+            //String id = preferences.getString("id", null);
+            //초기에 우리가 공유자원에 어떤 데이터를 key로 지정해서 넣어놓지 않은 상태에서 공유자원에 데이터가
+            //있는지 먼저 확인 하는 작업
+            SharedPreferences.Editor editor = preferences.edit(); //Editor 리턴하는 메소드.
+            editor.putString("id", edt_id.getText()+"");
+            editor.putString("pw", edt_pw.getText()+"");
+            editor.apply(); //commit이랑 같은 개념 데이터를 넣고 반드시 써줘야함.
+            //id = preferences.getString("id", null);
+
+        }else {
+            //SharedPreferences 삭제
+            //1.key를 이용해서 특정 데이터만 삭제하는 방법
+            //2.공유자원에 있는 모든 데이터 삭제하는 방법 - 내가 사용하는 어플이, 캐시, 데이터가 큰 경우 삭제해보고 다시 어플 사용
+            SharedPreferences preferences = getPreferences(LoginActivity.MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            //1. remove (key)
+            editor.remove("id");
+            editor.apply();
+
+            //2. clear -> 모든 정보가 삭제 되기 때문에 주의
+            //editor.clear();
+            //editor.apply();
+
+            Toast.makeText(LoginActivity.this, "체크가 안되었습니다.", Toast.LENGTH_SHORT).show();
+        }
+       Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+       startActivity(intent);
     }
 
     //일반 회원가입 -> 아이디 1개
