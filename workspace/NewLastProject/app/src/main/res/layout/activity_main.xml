@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
-<<<<<<< HEAD
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -24,26 +23,4 @@
     <!--채우기 색상이나 , 선택된 색상 , 메뉴 -->
 
 
-=======
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="단순 알람띄우기"/>
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="단순 알람띄우고 클릭까지"/>
-    <Button
-        android:id="@+id/btn3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="많은 글자 알람띄우기"/>
-    <Button
-        android:id="@+id/btn4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="AstTask"/>
->>>>>>> 9b6d72f32d8996b3f771726d73ffd51f54a019ec
 </LinearLayout>
