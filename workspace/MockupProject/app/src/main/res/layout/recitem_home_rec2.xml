@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_rec2_linear"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,12 +11,11 @@
         android:backgroundTint="#F1F0F0"
         app:cardCornerRadius="10dp">
         <LinearLayout
-            android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgv1"
+                android:id="@+id/home_rec2_img1"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 app:civ_border_width="2dp"
@@ -24,7 +24,7 @@
                 android:layout_marginTop="20dp"
                 android:src="@drawable/mypage"/>
             <TextView
-                android:id="@+id/tv1"
+                android:id="@+id/home_rec2_tv1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="id"
@@ -39,7 +39,7 @@
                 android:orientation="horizontal"
                 android:gravity="center">
                 <TextView
-                    android:id="@+id/tv2"
+                    android:id="@+id/home_rec2_tv2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="#감성캠핑"
@@ -49,7 +49,7 @@
                     android:textColor="#6E6E6E"
                     android:fontFamily="@font/ibmplexsanslight"/>
                 <TextView
-                    android:id="@+id/tv3"
+                    android:id="@+id/home_rec2_tv3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="#감성캠핑"
@@ -59,7 +59,7 @@
                     android:textColor="#6E6E6E"
                     android:fontFamily="@font/ibmplexsanslight"/>
                 <TextView
-                    android:id="@+id/tv4"
+                    android:id="@+id/home_rec2_tv4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="#감성캠핑"
@@ -70,7 +70,7 @@
                     android:fontFamily="@font/ibmplexsanslight"/>
             </LinearLayout>
             <ImageView
-                android:id="@+id/imgv2"
+                android:id="@+id/home_rec2_img2"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
@@ -83,6 +83,7 @@
                 android:orientation="horizontal"
                 android:layout_marginHorizontal="10dp">
                 <TextView
+                    android:id="@+id/home_rec2_tv5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="story. 65"
@@ -91,6 +92,7 @@
                     android:textColor="#000000"
                     android:fontFamily="@font/ibmplexsanslight" />
                 <TextView
+                    android:id="@+id/home_rec2_tv6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="· 4일전"
@@ -110,6 +112,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_gravity="center"/>
                     <TextView
+                        android:id="@+id/home_rec2_tv7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="78"

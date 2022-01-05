@@ -53,11 +53,19 @@
             />
     </LinearLayout>
     <CheckBox
+<<<<<<< HEAD
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="자동 로그인"
         android:id="@+id/chk_auto"
         />
+=======
+        android:layout_marginLeft="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="자동 로그인"
+        android:id="@+id/chk_auto"/>
+>>>>>>> 9b6d72f32d8996b3f771726d73ffd51f54a019ec
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
