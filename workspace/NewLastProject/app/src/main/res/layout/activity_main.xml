@@ -1,48 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:id="@+id/container"/>
+   <com.google.android.material.bottomnavigation.BottomNavigationView
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       app:itemIconTint="@drawable/nav_item_color"
+       app:itemTextColor="@drawable/nav_item_color"
+       app:menu="@menu/nav_menu"
+       android:id="@+id/btm_nav"/>
+    <!--채우기 색상이나 , 선택된 색상 , 메뉴 -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="아이디"
-            android:textSize="20dp"
-            android:layout_margin="10dp"/>
-        <EditText
-            android:id="@+id/main_id"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:hint="아이디를 입력하세요"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="비밀번호"
-            android:textSize="20dp"
-            android:layout_margin="10dp"/>
-        <EditText
-            android:id="@+id/main_pw"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:hint="비밀번호를 입력하세요"/>
-    </LinearLayout>
 
 </LinearLayout>

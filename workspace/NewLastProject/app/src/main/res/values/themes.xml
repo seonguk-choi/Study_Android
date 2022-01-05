@@ -13,8 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-
-    <!-- 공부할 필요 없다 미리 만들어 놓은 테마 쓰기-->
+    <!--공부할필요는 없음 필요하다면 미리 만들어놓은 테마를 가져다 쓰자.!-->
     <style name="Theme.AppCompat.transparent" parent="Theme.AppCompat.NoActionBar">
         <item name="android:background">#44000000</item>
         <item name="windowNoTitle">true</item>
@@ -23,4 +22,8 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowAnimationStyle">@android:style/Animation</item>
     </style>
+
+
+
+
 </resources>

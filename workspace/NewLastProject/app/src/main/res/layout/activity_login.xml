@@ -6,64 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
     android:orientation="vertical">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="50dp"
-        android:src="@drawable/ic_launcher_foreground"
-        android:layout_gravity="center"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_launcher_foreground"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="아이디"
-            android:textSize="20dp"
-            android:layout_margin="10dp"/>
+            android:layout_weight="1"
+            android:text="아이디 : "
+            android:textAlignment="viewEnd"
+            />
         <EditText
             android:id="@+id/edt_id"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:hint="아이디를 입력하세요"/>
+            android:layout_weight="2"
+            android:hint="여기에 아이디를 입력하세요."
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="비밀번호"
-            android:textSize="20dp"
-            android:layout_margin="10dp"/>
+            android:layout_weight="1"
+            android:text="비밀번호 : "
+            android:textAlignment="viewEnd"
+            />
         <EditText
             android:id="@+id/edt_pw"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="비밀번호를 입력하세요"/>
+            android:layout_weight="2"
+            android:hint="여기에 패스워드를 입력하세요."
+            />
     </LinearLayout>
-
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="자동 로그인"
+        android:id="@+id/chk_auto"
+        />
     <Button
-        android:id="@+id/btn1"
-        android:layout_width="183dp"
-        android:layout_height="53dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="100dp"
-        android:text="로그인"/>
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:id="@+id/btn_login"
+        />
     <ImageView
-        android:id="@+id/kakaobtn"
+        android:layout_gravity="center"
+        android:id="@+id/imgv_kakaologin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
         android:src="@drawable/kakaoimage"/>
-
 </LinearLayout>
