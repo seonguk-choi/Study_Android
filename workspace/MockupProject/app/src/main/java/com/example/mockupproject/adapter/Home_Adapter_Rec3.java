@@ -12,7 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mockupproject.DTO.Home_rec2DTO;
 import com.example.mockupproject.DTO.Home_Rec3DTO;
 import com.example.mockupproject.R;
 
@@ -23,9 +22,8 @@ public class Home_Adapter_Rec3 extends RecyclerView.Adapter<Home_Adapter_Rec3.Vi
     ArrayList<Home_Rec3DTO> list;
     LayoutInflater inflater;
 
-    public Home_Adapter_Rec3(Context context, ArrayList<Home_Rec3DTO> list) {
+    public Home_Adapter_Rec3(Context context) {
         this.context = context;
-        this.list = list;
         this.inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -38,12 +36,12 @@ public class Home_Adapter_Rec3 extends RecyclerView.Adapter<Home_Adapter_Rec3.Vi
 
     @Override
     public void onBindViewHolder(@NonNull Home_Adapter_Rec3.ViewHolder holder, int position) {
-        holder.binding(holder, position);
+        //holder.binding(holder, position);
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return 5;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -62,10 +60,10 @@ public class Home_Adapter_Rec3 extends RecyclerView.Adapter<Home_Adapter_Rec3.Vi
                 }
             });
         }
-        public void binding(ViewHolder holder, int position){
+       /* public void binding(ViewHolder holder, int position){
             holder.home_rec3_tv1.setText(list.get(position).getHome_rec3_tv1());
             holder.home_rec3_tv2.setText(list.get(position).getHome_rec3_tv2());
 
-        }
+        }*/
     }
 }

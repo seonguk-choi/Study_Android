@@ -30,6 +30,22 @@
         <entry key="..\:/coding/study_Android/workspace/MockupProject/app/src/main/res/menu/favorite_menu.xml" value="0.36614583333333334" />
         <entry key="..\:/coding/study_Android/workspace/MockupProject/app/src/main/res/menu/menu_option.xml" value="0.11851851851851852" />
         <entry key="..\:/coding/study_Android/workspace/MockupProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21574074074074073" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/drawable/button_round.xml" value="0.22083333333333333" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/drawable/item_color.xml" value="0.3764102564102564" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/activity_main.xml" value="0.20121951219512196" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/activity_splash.xml" value="0.17806484295845998" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/activity_trans.xml" value="0.2046875" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/home_navigation.xml" value="0.1" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/magazine_navigation.xml" value="0.13179347826086957" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/recitem_home_rec1.xml" value="0.1" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/recitem_home_rec2.xml" value="0.17806484295845998" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/recitem_home_rec3.xml" value="0.2046875" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/recitem_home_rec4.xml" value="0.1480978260869565" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/recitem_home_rec5.xml" value="0.1480978260869565" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/recitem_home_rec6.xml" value="0.2046875" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/recitem_video_rec.xml" value="0.25" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/layout/video_navigation.xml" value="0.1" />
+        <entry key="..\:/study_Android/workspace/MockupProject/app/src/main/res/menu/bottom_menu.xml" value="0.26944444444444443" />
       </map>
     </option>
   </component>

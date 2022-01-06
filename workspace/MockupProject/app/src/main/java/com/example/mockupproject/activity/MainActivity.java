@@ -29,21 +29,26 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         bottom_nav = findViewById(R.id.bottom_nav);
 
-        changeFragment(new HomeNavigation());
+        changeFragment(new HomeNavigation(this));
 
         bottom_nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if(item.getItemId() == R.id.tab1){
-                    changeFragment(new HomeNavigation());
+                    changeFragment(new HomeNavigation(MainActivity.this));
+                    return true;
                 } else if(item.getItemId() == R.id.tab2){
-                    changeFragment(new VideoNavigation());
+                    changeFragment(new VideoNavigation(MainActivity.this));
+                    return true;
                 } else if(item.getItemId() == R.id.tab3){
-                    changeFragment(new SpotNavigation());
+                    changeFragment(new SpotNavigation(MainActivity.this));
+                    return true;
                 } else if(item.getItemId() == R.id.tab4){
-                    changeFragment(new MagazineNavigation());
+                    changeFragment(new MagazineNavigation(MainActivity.this));
+                    return true;
                 } else if(item.getItemId() == R.id.tab5){
-                    changeFragment(new MypageNavigation());
+                    changeFragment(new MypageNavigation(MainActivity.this));
+                    return true;
                 }
 
 

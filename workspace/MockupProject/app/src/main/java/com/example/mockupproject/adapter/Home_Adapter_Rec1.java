@@ -22,9 +22,8 @@ public class Home_Adapter_Rec1 extends RecyclerView.Adapter<Home_Adapter_Rec1.Vi
     ArrayList<Home_Rec1DTO> list;
     LayoutInflater inflater;
 
-    public Home_Adapter_Rec1(Context context, ArrayList<Home_Rec1DTO> list) {
+    public Home_Adapter_Rec1(Context context) {
         this.context = context;
-        this.list = list;
         this.inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -37,12 +36,12 @@ public class Home_Adapter_Rec1 extends RecyclerView.Adapter<Home_Adapter_Rec1.Vi
 
     @Override
     public void onBindViewHolder(@NonNull Home_Adapter_Rec1.ViewHolder holder, int position) {
-        holder.binding(holder, position);
+       // holder.binding(holder, position);
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return 5;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -64,11 +63,11 @@ public class Home_Adapter_Rec1 extends RecyclerView.Adapter<Home_Adapter_Rec1.Vi
                 }
             });
         }
-        public void binding(ViewHolder holder, int position){
+       /* public void binding(ViewHolder holder, int position){
             holder.home_rec1_img1.setImageResource(list.get(position).getHome_rec1_img1());
             holder.home_rec1_tv1.setText(list.get(position).getHome_rec1_tv1());
             holder.home_rec1_tv2.setText(list.get(position).getHome_rec1_tv2());
             holder.home_rec1_tv3.setText(list.get(position).getHome_rec1_tv3());
-        }
+        }*/
     }
 }

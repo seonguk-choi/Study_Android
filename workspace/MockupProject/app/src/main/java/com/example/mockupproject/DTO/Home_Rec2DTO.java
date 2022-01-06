@@ -1,11 +1,8 @@
 package com.example.mockupproject.DTO;
 
-import android.widget.ImageView;
-import android.widget.TextView;
-
-public class Home_rec2DTO {
+public class Home_Rec2DTO {
     private int home_rec2_img1, home_rec2_img2;
-    private String home_rec2_tv1, home_rec2_tv2, home_rec2_tv3, home_rec2_tv4, home_rec2_tv5, home_rec2_tv6;
+    private String home_rec2_tv1, home_rec2_tv2, home_rec2_tv3, home_rec2_tv4, home_rec2_tv5, home_rec2_tv6, home_rec2_tv7;
 
     public int getHome_rec2_img1() {
         return home_rec2_img1;
@@ -69,5 +66,13 @@ public class Home_rec2DTO {
 
     public void setHome_rec2_tv6(String home_rec2_tv6) {
         this.home_rec2_tv6 = home_rec2_tv6;
+    }
+
+    public String getHome_rec2_tv7() {
+        return home_rec2_tv7;
+    }
+
+    public void setHome_rec2_tv7(String home_rec2_tv7) {
+        this.home_rec2_tv7 = home_rec2_tv7;
     }
 }
