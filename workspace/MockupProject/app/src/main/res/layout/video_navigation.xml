@@ -22,12 +22,11 @@
                 app:tabSelectedTextColor="#9F9F9F"
                 android:elevation="1dp"
                 android:background="#00ff0000"/>
-
         </com.google.android.material.appbar.AppBarLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/video_rec"
+    <androidx.viewpager2.widget.ViewPager2
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent"
+        android:id="@+id/video_pager"
+        android:orientation="vertical"/>
 </FrameLayout>

@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.mockupproject.DAO.OnClickDTO;
 import com.example.mockupproject.DAO.RecyclerViewDAO;
 import com.example.mockupproject.DTO.Home_Rec1DTO;
 import com.example.mockupproject.R;
@@ -27,12 +28,10 @@ import java.util.ArrayList;
 
 public class HomeNavigation extends Fragment {
     RecyclerView rec1, rec2, rec3, rec4, rec5;
-    LinearLayout linear1, linear2, linear3, linear4, linear5;
-    Button btn1;
     Context context;
-    RecyclerViewDAO dao = new RecyclerViewDAO();
     LinearLayoutManager manager;
-
+    ArrayList<OnClickDTO> oclist = new ArrayList<>();
+    int i;
     public HomeNavigation(Context context){
         this.context = context;
     }
@@ -47,50 +46,23 @@ public class HomeNavigation extends Fragment {
         rec4 = rootView.findViewById(R.id.home_rec4);
         rec5 = rootView.findViewById(R.id.home_rec5);
 
-        linear1 = rootView.findViewById(R.id.home_linear1);
-        linear2 = rootView.findViewById(R.id.home_linear2);
-        linear3 = rootView.findViewById(R.id.home_linear3);
-        linear4 = rootView.findViewById(R.id.home_linear4);
-        linear5 = rootView.findViewById(R.id.home_linear5);
+        oclist.add(new OnClickDTO(R.id.home_linear1, "home_linear1 이동"));
+        oclist.add(new OnClickDTO(R.id.home_linear2, "home_linear2 이동"));
+        oclist.add(new OnClickDTO(R.id.home_linear3, "home_linear3 이동"));
+        oclist.add(new OnClickDTO(R.id.home_linear4, "home_linear4 이동"));
+        oclist.add(new OnClickDTO(R.id.home_linear5, "home_linear5 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon1, "home_icon1 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon2, "home_icon2 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon3, "home_icon3 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon4, "home_icon4 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon5, "home_icon5 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon6, "home_icon6 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon5, "home_icon5 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon7, "home_icon7 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon8, "home_icon8 이동"));
+        oclist.add(new OnClickDTO(R.id.home_btn1, "home_btn1 이동"));
 
-        btn1 = rootView.findViewById(R.id.home_btn1);
-
-        linear1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "페이지 이동", Toast.LENGTH_SHORT).show();
-            }
-        });
-        linear2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "페이지 이동", Toast.LENGTH_SHORT).show();
-            }
-        });
-        linear3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "페이지 이동", Toast.LENGTH_SHORT).show();
-            }
-        });
-        linear4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "페이지 이동", Toast.LENGTH_SHORT).show();
-            }
-        });
-        linear5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "페이지 이동", Toast.LENGTH_SHORT).show();
-            }
-        });
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "페이지 이동", Toast.LENGTH_SHORT).show();
-            }
-        });
+        buttonAction(oclist, rootView);
 
         setRec1();
         setRec2();
@@ -132,5 +104,15 @@ public class HomeNavigation extends Fragment {
         rec5.setAdapter(adapter_rec5);
     }
 
+    public void buttonAction(ArrayList<OnClickDTO> oclist, View rootView){
+        for (i = 0; i < oclist.size(); i++) {
+            rootView.findViewById(oclist.get(i).getClickId()).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "페이지 이동", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
 
+    }
 }

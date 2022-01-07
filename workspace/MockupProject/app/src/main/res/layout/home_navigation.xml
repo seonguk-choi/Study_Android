@@ -65,7 +65,8 @@
                             android:layout_height="match_parent"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="8dp">
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -76,7 +77,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="캠핑"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textSize="10dp"/>
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/home_icon2"
@@ -84,7 +86,8 @@
                             android:layout_height="match_parent"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="8dp">
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -95,7 +98,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="차막,노지"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textSize="10dp"/>
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/home_icon3"
@@ -103,7 +107,8 @@
                             android:layout_height="match_parent"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="8dp">
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -114,7 +119,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="글램핑"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textSize="10dp"/>
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/home_icon4"
@@ -122,7 +128,8 @@
                             android:layout_height="match_parent"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="8dp">
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -133,7 +140,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="백패킹"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textSize="10dp"/>
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/home_icon5"
@@ -141,7 +149,8 @@
                             android:layout_height="match_parent"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="8dp">
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -152,7 +161,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="쿠킹"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textSize="10dp"/>
                         </LinearLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -167,7 +177,8 @@
                             android:layout_height="match_parent"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="8dp">
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -178,7 +189,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="낚시"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textSize="10dp"/>
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/home_icon7"
@@ -186,7 +198,8 @@
                             android:layout_height="match_parent"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="8dp">
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -197,7 +210,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="여행"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textSize="10dp"/>
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/home_icon8"
@@ -205,7 +219,8 @@
                             android:layout_height="match_parent"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="8dp">
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -216,7 +231,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="액티비티"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textSize="10dp"/>
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/home_icon9"
@@ -224,7 +240,8 @@
                             android:layout_height="match_parent"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="8dp">
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -235,7 +252,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="수중운동"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textSize="10dp"/>
                         </LinearLayout>
                         <LinearLayout
                             android:id="@+id/home_icon10"
@@ -243,7 +261,8 @@
                             android:layout_height="match_parent"
                             android:layout_margin="10dp"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="8dp">
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -254,7 +273,8 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="자연"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textSize="10dp"/>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -271,7 +291,6 @@
                         android:text="테마별로 즐기는 아웃도어 TV"
                         android:textSize="20dp"
                         android:layout_marginVertical="10dp"
-                        android:textStyle="bold"
                         android:layout_marginRight="100dp"
                         android:fontFamily="@font/ibmplexsanslight"/>
 
@@ -310,7 +329,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="인플루언서 인터뷰"
                                 android:textSize="20dp"
-                                android:textStyle="bold"
                                 android:fontFamily="@font/ibmplexsanslight"/>
                             <ImageView
                                 android:layout_width="25dp"
@@ -322,7 +340,6 @@
                             android:layout_height="wrap_content"
                             android:text="&amp; 추천 스팟, 아이템"
                             android:textSize="20dp"
-                            android:textStyle="bold"
                             android:fontFamily="@font/ibmplexsanslight"/>
                     </LinearLayout>
                     <ImageView
@@ -356,7 +373,6 @@
                             android:layout_height="wrap_content"
                             android:text="뭐사지? 할땐"
                             android:textSize="20dp"
-                            android:textStyle="bold"
                             android:fontFamily="@font/ibmplexsanslight"/>
                         <LinearLayout
                             android:layout_width="250dp"
@@ -367,7 +383,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="캠핑집들이 훔펴보자"
                                 android:textSize="20dp"
-                                android:textStyle="bold"
                                 android:fontFamily="@font/ibmplexsanslight"/>
                             <ImageView
                                 android:layout_width="25dp"
@@ -491,7 +506,6 @@
                             android:layout_height="wrap_content"
                             android:text="2022 새해는 이곳에서!"
                             android:textSize="20dp"
-                            android:textStyle="bold"
                             android:fontFamily="@font/ibmplexsanslight"/>
                         <LinearLayout
                             android:layout_width="250dp"
@@ -503,7 +517,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="일출 맛집 차박지 10곳"
                                 android:textSize="20dp"
-                                android:textStyle="bold"
                                 android:fontFamily="@font/ibmplexsanslight"/>
                             <ImageView
                                 android:layout_width="25dp"
@@ -548,7 +561,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="아웃도어 랜선 여행"
                                 android:textSize="20dp"
-                                android:textStyle="bold"
                                 android:fontFamily="@font/ibmplexsanslight"/>
                             <ImageView
                                 android:layout_width="25dp"
@@ -587,7 +599,6 @@
                             android:layout_height="wrap_content"
                             android:text="캠린이에게 필요한 정보"
                             android:textSize="20dp"
-                            android:textStyle="bold"
                             android:fontFamily="@font/ibmplexsanslight"/>
                         <LinearLayout
                             android:layout_width="250dp"
@@ -598,7 +609,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="여기 다 있다"
                                 android:textSize="20dp"
-                                android:textStyle="bold"
                                 android:fontFamily="@font/ibmplexsanslight"/>
                             <ImageView
                                 android:layout_width="25dp"
