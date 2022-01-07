@@ -20,6 +20,4 @@
         android:layout_height="match_parent"
         android:id="@+id/cus_rcview"/>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-
 </LinearLayout>

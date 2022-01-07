@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".member.LoginActivity"
     android:orientation="vertical">
 
         <ImageView
@@ -59,15 +59,28 @@
         android:id="@+id/chk_auto"
         />
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:text="로그인"
         android:id="@+id/btn_login"
-        />
+        android:layout_gravity="center"
+        android:background="@drawable/kakaoimage"
+        android:backgroundTint="#7A87D3"
+        android:layout_marginVertical="10dp"/>
     <ImageView
         android:layout_gravity="center"
         android:id="@+id/imgv_kakaologin"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/kakaoimage"/>
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/kakaoimage"
+        android:layout_marginVertical="10dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="회원가입"
+        android:id="@+id/btn_join"
+        android:layout_gravity="center"
+        android:layout_marginVertical="10dp"/>
+
 </LinearLayout>
