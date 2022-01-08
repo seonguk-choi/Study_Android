@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -62,5 +63,10 @@ public class VideoNavigation extends Fragment {
         });
 
         return  rootView;
+    }
+
+    public void changePager(){
+        Video_Adapter_Pager1 adapter = new Video_Adapter_Pager1(context);
+        pager2.setAdapter(adapter);
     }
 }

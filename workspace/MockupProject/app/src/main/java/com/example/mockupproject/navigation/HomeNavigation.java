@@ -109,7 +109,7 @@ public class HomeNavigation extends Fragment {
             rootView.findViewById(oclist.get(i).getClickId()).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "페이지 이동", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, " 이동", Toast.LENGTH_SHORT).show();
                 }
             });
         }
