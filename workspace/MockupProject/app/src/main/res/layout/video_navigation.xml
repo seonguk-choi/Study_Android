@@ -12,21 +12,26 @@
         android:orientation="vertical"/>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#00000000">
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#00000000"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
             <com.google.android.material.tabs.TabLayout
+                android:layout_marginTop="20dp"
                 android:id="@+id/video_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:tabMode="fixed"
-                app:tabGravity="fill"
-                app:tabTextColor="#ffffff"
-                app:tabSelectedTextColor="#9F9F9F"
-                android:elevation="1dp"
-                android:background="#00ff0000"/>
+                app:tabIndicatorHeight="0dp"
+                app:tabGravity="center"
+                app:tabTextColor="#838383"
+                app:tabSelectedTextColor="#ffffff"
+                android:elevation="10dp"
+                android:background="@android:color/transparent"
+                />
         </com.google.android.material.appbar.AppBarLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </FrameLayout>

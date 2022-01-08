@@ -1,4 +1,4 @@
-package com.example.mockupproject.DAO;
+package com.example.mockupproject.DTO;
 
 public class OnClickDTO {
     private int clickId;

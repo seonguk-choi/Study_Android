@@ -5,13 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.mockupproject.DAO.RecyclerViewDAO;
 import com.example.mockupproject.R;
 import com.example.mockupproject.adapter.Video_Adapter_Pager1;
 import com.example.mockupproject.adapter.Video_Adapter_Pager2;

@@ -3,20 +3,18 @@ package com.example.mockupproject.navigation;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.mockupproject.DAO.OnClickDTO;
-import com.example.mockupproject.DAO.RecyclerViewDAO;
-import com.example.mockupproject.DTO.Home_Rec1DTO;
+import com.example.mockupproject.DTO.OnClickDTO;
 import com.example.mockupproject.R;
 import com.example.mockupproject.adapter.Home_Adapter_Rec1;
 import com.example.mockupproject.adapter.Home_Adapter_Rec2;
@@ -30,6 +28,8 @@ public class HomeNavigation extends Fragment {
     RecyclerView rec1, rec2, rec3, rec4, rec5;
     Context context;
     LinearLayoutManager manager;
+    SwipeRefreshLayout swipe;
+    SearchView searchView;
     ArrayList<OnClickDTO> oclist = new ArrayList<>();
     int i;
     public HomeNavigation(Context context){
@@ -45,6 +45,7 @@ public class HomeNavigation extends Fragment {
         rec3 = rootView.findViewById(R.id.home_rec3);
         rec4 = rootView.findViewById(R.id.home_rec4);
         rec5 = rootView.findViewById(R.id.home_rec5);
+        searchView = rootView.findViewById(R.id.home_search);
 
         oclist.add(new OnClickDTO(R.id.home_linear1, "home_linear1 이동"));
         oclist.add(new OnClickDTO(R.id.home_linear2, "home_linear2 이동"));
@@ -60,7 +61,24 @@ public class HomeNavigation extends Fragment {
         oclist.add(new OnClickDTO(R.id.home_icon5, "home_icon5 이동"));
         oclist.add(new OnClickDTO(R.id.home_icon7, "home_icon7 이동"));
         oclist.add(new OnClickDTO(R.id.home_icon8, "home_icon8 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon9, "home_icon7 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon10, "home_icon8 이동"));
         oclist.add(new OnClickDTO(R.id.home_btn1, "home_btn1 이동"));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Toast.makeText(context, query, Toast.LENGTH_SHORT).show();
+                dataSelect(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                Toast.makeText(context, newText, Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
 
         buttonAction(oclist, rootView);
 
@@ -113,6 +131,9 @@ public class HomeNavigation extends Fragment {
                 }
             });
         }
+    }
+
+    public void dataSelect(String query){
 
     }
 }
