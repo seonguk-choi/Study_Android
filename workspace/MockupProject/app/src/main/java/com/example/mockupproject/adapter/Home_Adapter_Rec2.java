@@ -30,7 +30,7 @@ public class Home_Adapter_Rec2 extends RecyclerView.Adapter<Home_Adapter_Rec2.Vi
     @NonNull
     @Override
     public Home_Adapter_Rec2.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemview = inflater.inflate(R.layout.recitem_home_rec2, parent, false);
+        View itemview = inflater.inflate(R.layout.item_home_rec2, parent, false);
         return new ViewHolder(itemview);
     }
 

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +29,7 @@ public class Home_Adapter_Rec3 extends RecyclerView.Adapter<Home_Adapter_Rec3.Vi
     @NonNull
     @Override
     public Home_Adapter_Rec3.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemview = inflater.inflate(R.layout.recitem_home_rec3, parent, false);
+        View itemview = inflater.inflate(R.layout.item_home_rec3, parent, false);
         return new ViewHolder(itemview);
     }
 

@@ -30,7 +30,7 @@ public class Video_Adapter_Pager2 extends RecyclerView.Adapter<Video_Adapter_Pag
     @NonNull
     @Override
     public Video_Adapter_Pager2.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemview = inflater.inflate(R.layout.recitem_video_pager2, parent, false);
+        View itemview = inflater.inflate(R.layout.item_video_pager2, parent, false);
         return new Video_Adapter_Pager2.ViewHolder(itemview);
     }
 
