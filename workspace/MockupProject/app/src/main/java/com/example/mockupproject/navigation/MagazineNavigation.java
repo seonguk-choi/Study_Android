@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.mockupproject.R;
+import com.example.mockupproject.activity.MainActivity;
 
 public class MagazineNavigation extends Fragment {
     Context context;
-
 
     public MagazineNavigation(Context context){
         this.context = context;
@@ -23,6 +23,7 @@ public class MagazineNavigation extends Fragment {
                              Bundle savedInstanceState) {
 
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.magazine_navigation, container, false);
+
         return  rootView;
     }
 }

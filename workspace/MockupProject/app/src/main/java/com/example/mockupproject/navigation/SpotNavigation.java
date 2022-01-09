@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.mockupproject.R;
+import com.example.mockupproject.activity.MainActivity;
 
 public class SpotNavigation extends Fragment {
     Context context;

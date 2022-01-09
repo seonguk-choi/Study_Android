@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mockupproject">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MockupProject">
         <activity
+            android:name=".activity.HomeSearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".transactivity.TransActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.transparent"/>
+            android:theme="@style/Theme.AppCompat.transparent" />
         <activity
             android:name=".activity.MainActivity"
             android:exported="false" />
@@ -28,4 +31,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

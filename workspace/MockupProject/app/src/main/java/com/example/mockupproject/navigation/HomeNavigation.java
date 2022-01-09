@@ -1,26 +1,35 @@
 package com.example.mockupproject.navigation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.mockupproject.DTO.OnClickDTO;
 import com.example.mockupproject.R;
+import com.example.mockupproject.activity.HomeSearchActivity;
+import com.example.mockupproject.activity.MainActivity;
 import com.example.mockupproject.adapter.Home_Adapter_Rec1;
 import com.example.mockupproject.adapter.Home_Adapter_Rec2;
 import com.example.mockupproject.adapter.Home_Adapter_Rec3;
 import com.example.mockupproject.adapter.Home_Adapter_Rec4;
 import com.example.mockupproject.adapter.Home_Adapter_Rec5;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -29,9 +38,9 @@ public class HomeNavigation extends Fragment {
     Context context;
     LinearLayoutManager manager;
     SwipeRefreshLayout swipe;
-    SearchView searchView;
     ArrayList<OnClickDTO> oclist = new ArrayList<>();
-    int i;
+    MainActivity mainActivity = new MainActivity();
+
     public HomeNavigation(Context context){
         this.context = context;
     }
@@ -45,8 +54,9 @@ public class HomeNavigation extends Fragment {
         rec3 = rootView.findViewById(R.id.home_rec3);
         rec4 = rootView.findViewById(R.id.home_rec4);
         rec5 = rootView.findViewById(R.id.home_rec5);
-        searchView = rootView.findViewById(R.id.home_search);
+        swipe = rootView.findViewById(R.id.home_swipe);
 
+        oclist.add(new OnClickDTO(R.id.home_search, "home_search 이동"));
         oclist.add(new OnClickDTO(R.id.home_linear1, "home_linear1 이동"));
         oclist.add(new OnClickDTO(R.id.home_linear2, "home_linear2 이동"));
         oclist.add(new OnClickDTO(R.id.home_linear3, "home_linear3 이동"));
@@ -61,26 +71,9 @@ public class HomeNavigation extends Fragment {
         oclist.add(new OnClickDTO(R.id.home_icon5, "home_icon5 이동"));
         oclist.add(new OnClickDTO(R.id.home_icon7, "home_icon7 이동"));
         oclist.add(new OnClickDTO(R.id.home_icon8, "home_icon8 이동"));
-        oclist.add(new OnClickDTO(R.id.home_icon9, "home_icon7 이동"));
-        oclist.add(new OnClickDTO(R.id.home_icon10, "home_icon8 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon9, "home_icon9 이동"));
+        oclist.add(new OnClickDTO(R.id.home_icon10, "home_icon10 이동"));
         oclist.add(new OnClickDTO(R.id.home_btn1, "home_btn1 이동"));
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(context, query, Toast.LENGTH_SHORT).show();
-                dataSelect(query);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                Toast.makeText(context, newText, Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
-
-        buttonAction(oclist, rootView);
 
         setRec1();
         setRec2();
@@ -88,9 +81,22 @@ public class HomeNavigation extends Fragment {
         setRec4();
         setRec5();
 
+        buttonAction(oclist, rootView);
+
+        swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                setRec1();
+                setRec2();
+                setRec3();
+                setRec4();
+                setRec5();
+                swipe.setRefreshing(false);
+            }
+        });
+
         return  rootView;
     }
-
     public void setRec1(){
         manager = new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false);
         rec1.setLayoutManager(manager);
@@ -123,13 +129,33 @@ public class HomeNavigation extends Fragment {
     }
 
     public void buttonAction(ArrayList<OnClickDTO> oclist, View rootView){
-        for (i = 0; i < oclist.size(); i++) {
+        for (int i = 0; i < oclist.size(); i++) {
+            if(oclist.get(i).getClickId() == R.id.home_search){
+                rootView.findViewById(oclist.get(i).getClickId()).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent  = new Intent(context, HomeSearchActivity.class);
+                        startActivity(intent);
+                        mainActivity = (MainActivity) getActivity();
+                        mainActivity.overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_left_exit);
+                    }
+                });
+            } else if(oclist.get(i).getClickId() == R.id.home_btn1){
+                rootView.findViewById(oclist.get(i).getClickId()).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mainActivity = (MainActivity) getActivity();
+                        mainActivity.changeFragment(new SpotNavigation(context));
+                    }
+                });
+            } else {
             rootView.findViewById(oclist.get(i).getClickId()).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, " 이동", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "이동", Toast.LENGTH_SHORT).show();
                 }
             });
+            }
         }
     }
 

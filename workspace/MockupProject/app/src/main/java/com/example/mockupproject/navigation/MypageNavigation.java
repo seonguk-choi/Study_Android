@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.mockupproject.R;
+import com.example.mockupproject.activity.MainActivity;
 
 public class MypageNavigation extends Fragment {
     Context context;
-
 
     public MypageNavigation(Context context){
         this.context = context;

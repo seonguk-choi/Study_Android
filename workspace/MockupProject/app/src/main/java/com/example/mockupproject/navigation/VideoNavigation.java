@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.mockupproject.R;
+import com.example.mockupproject.activity.MainActivity;
 import com.example.mockupproject.adapter.Video_Adapter_Pager1;
 import com.example.mockupproject.adapter.Video_Adapter_Pager2;
 import com.google.android.material.tabs.TabLayout;
@@ -58,12 +59,6 @@ public class VideoNavigation extends Fragment {
 
             }
         });
-
         return  rootView;
-    }
-
-    public void changePager(){
-        Video_Adapter_Pager1 adapter = new Video_Adapter_Pager1(context);
-        pager2.setAdapter(adapter);
     }
 }
