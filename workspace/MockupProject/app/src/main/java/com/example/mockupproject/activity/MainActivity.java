@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
         if(preferences.getString("trans", null) == null) {
             Intent intent = new Intent(MainActivity.this, TransActivity.class);
             startActivity(intent);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("trans", "");
+            editor.apply();
         }
 
         bottom_nav = findViewById(R.id.bottom_nav);
@@ -61,10 +64,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("trans", "");
-        editor.apply();
-
     }
 
     public void changeFragment(Fragment fragment){
@@ -79,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         if (System.currentTimeMillis() <= backKeyPressedTime + 2500) {
+            SharedPreferences preferences = getPreferences(MainActivity.MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.remove("trans");
+            editor.apply();
+
             finishAffinity();
         }
     }
