@@ -12,6 +12,7 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,6 +26,10 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.newlastproject.R;
+import com.example.newlastproject.async.AskParam;
+import com.example.newlastproject.async.CommonAsk;
+import com.example.newlastproject.async.CommonMethod;
+import com.google.gson.Gson;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -38,6 +43,9 @@ public class JoinActivity extends AppCompatActivity {
     AlertDialog dialog;
     final int GALLERY_IMG = 1001;
     final int CAMERA_REQ = 1002;
+    String img_filepath; //이미지 경로 저장하기 위한 String 변수.
+
+
 
     //Spinner spn_time
     String[] spn_item = {"카메라", "겔러리"};
@@ -54,6 +62,9 @@ public class JoinActivity extends AppCompatActivity {
         //1.메니페스트에 Perimssion 어떤 권한을 사용할지 기재
         //2.별도의 권한 동의가 필요하다면 checkDangerous메소드 이용해서 사용자에게 동의 구함
         imgv_profile = findViewById(R.id.join_image);
+        edt_id = findViewById(R.id.join_edtid);
+        edt_pw = findViewById(R.id.join_edtpw);
+        edt_name = findViewById(R.id.join_edtname);
 
         //권한요청 메소드
         checkDangerousPermissions();
@@ -62,6 +73,26 @@ public class JoinActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showDialog();
+            }
+        });
+
+        findViewById(R.id.join_btnedit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //MemberVO를 만들고 Spring도 MemberVO -> Mapper 추가해서 DB에 입력
+                //VO를 보내서 인서트하게 만듬
+
+                MemberVO vo = new MemberVO();
+                vo.setId(edt_id.getText()+"");
+                vo.setPw(edt_pw.getText()+"");
+
+                Gson gson = new Gson();
+
+                CommonAsk commonAsk = new CommonAsk("join");
+                commonAsk.params.add(new AskParam("vo", gson.toJson(vo)));
+                commonAsk.fileprams.add(new AskParam("file", img_filepath));
+                CommonMethod.excuteAsk(commonAsk);
+                finish();
             }
         });
 
@@ -135,12 +166,13 @@ public class JoinActivity extends AppCompatActivity {
         File curFile = null;
         try{
             //임시 파일을 생성함(전체경로) 2번째 suffix 확장자
-            curFile = File.createTempFile(imageFileName, "jpg", storageDir);
+            curFile = File.createTempFile(imageFileName, ".jpg", storageDir);
         } catch (Exception e){
 
         }
 
         //Multipart에 보내기 위한 임시파일이 있는 곳의 절대경로를 저장하는 로직이 필요함(String)
+        img_filepath = curFile.getAbsolutePath(); //절대 경로
 
         return curFile;
 
@@ -155,12 +187,17 @@ public class JoinActivity extends AppCompatActivity {
         if(requestCode == GALLERY_IMG && resultCode == RESULT_OK){
             Toast.makeText(JoinActivity.this, "이미지가져오기 성공", Toast.LENGTH_SHORT).show();
             Uri galleryUri = data.getData();
+            img_filepath = getPathFromURI(galleryUri);
             Glide.with(JoinActivity.this).load(galleryUri).into(imgv_profile);
         } else if (requestCode == CAMERA_REQ && resultCode == RESULT_OK){
             Toast.makeText(JoinActivity.this, "사진을 찍어서 가지고 옴", Toast.LENGTH_SHORT).show();
 
             //갤러리에 사진을 저장하고 저장한 Uri를 통해서 다시 Glide를 통해 붙이기
             //Uri gellaryAddpic메소드 하기전
+
+            //Uri cameraUri = data.getData();
+            Glide.with(JoinActivity.this).load(img_filepath).into(imgv_profile);
+
         }
     }
 
@@ -192,6 +229,18 @@ public class JoinActivity extends AppCompatActivity {
             }
         }
     }
+
+    public String getPathFromURI(Uri contentUri){
+        String res = null;
+        String[] proj = {MediaStore.Images.Media.DATA};
+        Cursor cusor = getContentResolver().query(contentUri, proj, null, null, null);
+        if(cusor.moveToFirst()){
+            int column_indext = cusor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            res = cusor.getString(column_indext);
+        }
+        return res;
+    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {

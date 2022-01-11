@@ -12,8 +12,10 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -27,15 +29,17 @@ public class CommonAsk extends AsyncTask<String,String,InputStream> {
 
     MultipartEntityBuilder builder;//파라메터,파일 등등을 보내기위한 객체
     final String HTTPIP = "http://192.168.0.12";//IP
-    final String SVRPATH = "/mid/"; //
+    final String SVRPATH = "/middle/"; //
     String mapping ;
     private String postUrl ;//
 
     public ArrayList<AskParam> params ;
+    public ArrayList<AskParam> fileprams;
 
     public CommonAsk(String mapping) {
         this.mapping = mapping;
-        params =new ArrayList<>();
+        this.params =new ArrayList<>();
+        this.fileprams = new ArrayList<>();
     }
 
     //어싱크테스크를 excute(실행) ↓
@@ -47,9 +51,15 @@ public class CommonAsk extends AsyncTask<String,String,InputStream> {
         builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
         builder.addTextBody("idx" , params.size()+"" ,
                 ContentType.create("Multipart/related" , "UTF-8"));
+
         for(int i = 0; i < params.size() ; i ++){
             builder.addTextBody(params.get(i).getKey() , params.get(i).getVal() ,
                     ContentType.create("Multipart/related" , "UTF-8"));
+        }
+
+        for(int i = 0 ; i < fileprams.size() ; i++){
+            builder.addPart(fileprams.get(i).getKey(),
+                    new FileBody(new File(fileprams.get(i).getVal() )));
         }
 
         httpClient = AndroidHttpClient.newInstance("Android");
