@@ -17,6 +17,7 @@ import com.example.newlastproject.R;
 import com.example.newlastproject.async.AskParam;
 import com.example.newlastproject.async.CommonAsk;
 import com.example.newlastproject.async.CommonMethod;
+import com.example.newlastproject.async.CommonVal;
 import com.example.newlastproject.transactivity.TransActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -59,27 +60,19 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // edt_id <- 글자 EditText.getText()<-
-                MemberVO vo = new MemberVO();
-                vo.setId(edt_id.getText()+"");
-                vo.setPw(edt_pw.getText()+"");
-
+                CommonAsk ask = new CommonAsk("login");
+                ask.addParams("id", edt_id.getText()+"");
+                ask.addParams("pw", edt_pw.getText()+"");
 
                 Gson gson = new Gson();
+                CommonVal.loginInfo = gson.fromJson(new InputStreamReader(CommonMethod.excuteAsk(ask)), MemberVO.class) ;
 
-                String tempVo = gson.toJson(vo);
-
-                CommonAsk commonAsk = new CommonAsk("login");
-                commonAsk.params.add(new AskParam("vo", tempVo));
-                InputStream in = CommonMethod.excuteAsk(commonAsk);
-                vo = gson.fromJson(new InputStreamReader(in),  MemberVO.class);
-
-
-                if( vo != null ){
-                    Toast.makeText(LoginActivity.this, "로그인 되었습니다.", Toast.LENGTH_SHORT).show();
+                if(CommonVal.loginInfo != null){
                     goMain();
-                }else{
-                    Toast.makeText(LoginActivity.this, "아이디,비밀번호 틀림.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "아이디 또는 비밀번호를 확인하세요", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 

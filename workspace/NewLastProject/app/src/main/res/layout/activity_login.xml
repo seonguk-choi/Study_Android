@@ -64,7 +64,6 @@
         android:text="로그인"
         android:id="@+id/btn_login"
         android:layout_gravity="center"
-        android:background="@drawable/kakaoimage"
         android:backgroundTint="#7A87D3"
         android:layout_marginVertical="10dp"/>
     <ImageView

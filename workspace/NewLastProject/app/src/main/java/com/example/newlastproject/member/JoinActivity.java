@@ -32,6 +32,8 @@ import com.example.newlastproject.async.CommonMethod;
 import com.google.gson.Gson;
 
 import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
@@ -91,8 +93,14 @@ public class JoinActivity extends AppCompatActivity {
                 CommonAsk commonAsk = new CommonAsk("join");
                 commonAsk.params.add(new AskParam("vo", gson.toJson(vo)));
                 commonAsk.fileprams.add(new AskParam("file", img_filepath));
-                CommonMethod.excuteAsk(commonAsk);
-                finish();
+                InputStream in = CommonMethod.excuteAsk(commonAsk);
+                String result = gson.fromJson(new InputStreamReader(in), String.class);
+
+                if(result != null && result.equals("1")){
+                    finish();
+                } else {
+                    Toast.makeText(JoinActivity.this, "오류발생", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
