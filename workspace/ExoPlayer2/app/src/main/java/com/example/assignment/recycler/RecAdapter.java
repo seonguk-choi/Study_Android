@@ -169,4 +169,5 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder>
 
 
         }
+
     }

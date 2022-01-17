@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/button_round.xml" value="0.12777777777777777" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/button_round2.xml" value="0.12777777777777777" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/item_color.xml" value="0.12777777777777777" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/activity_home_search.xml" value="0.17603850050658562" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/activity_main.xml" value="0.1778115501519757" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/activity_splash.xml" value="0.1778115501519757" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/controller_exoplayer.xml" value="0.1778115501519757" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_iot.xml" value="0.17603850050658562" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_movie.xml" value="0.23291139240506328" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_mypage.xml" value="0.25" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_shop.xml" value="0.1778115501519757" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/item_exoplayer_movie.xml" value="0.1" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/item_pager_movie.xml" value="0.2481012658227848" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/item_pager_movie1.xml" value="0.17603850050658562" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/menu/bottom_menu.xml" value="0.24537037037037038" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

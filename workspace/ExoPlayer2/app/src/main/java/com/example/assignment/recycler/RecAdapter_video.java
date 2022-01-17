@@ -5,11 +5,14 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.assignment.MainActivity;
 import com.example.assignment.R;
 import com.example.assignment.Video_EXO.VideoItem;
 import com.google.android.exoplayer2.ExoPlayerFactory;
@@ -29,6 +32,12 @@ import com.google.android.exoplayer2.util.Util;
 import java.util.ArrayList;
 
 public class RecAdapter_video extends RecyclerView.Adapter<RecAdapter_video.VH> {
+    boolean icon_change= true;
+    private Boolean playWhenReady = true;
+    private int currentWindow = 0;
+    private Long playbackPosition = 0L;
+    int screen_change= 0;
+
     Context context;
     ArrayList<VideoItem> videoItems;
 
@@ -69,6 +78,7 @@ public class RecAdapter_video extends RecyclerView.Adapter<RecAdapter_video.VH> 
         holder.setDto(videoItem);
         String sample = videoItem.getVideoUrl();
 
+
         MediaSource mediaSource = holder.buildMediaSource(Uri.parse(sample));
 
         //prepare
@@ -86,6 +96,7 @@ public class RecAdapter_video extends RecyclerView.Adapter<RecAdapter_video.VH> 
 
         TextView tvTitle;
         TextView tvTag;
+        ImageButton item_icon1,item_icon2,item_icon3,item_icon4;
 
         private PlayerView exoPlayerView;
         private SimpleExoPlayer player;
@@ -96,10 +107,50 @@ public class RecAdapter_video extends RecyclerView.Adapter<RecAdapter_video.VH> 
             tvTitle = itemView.findViewById(R.id.video_title);
             tvTag = itemView.findViewById(R.id.video_tag);
             exoPlayerView = itemView.findViewById(R.id.exoPlayerView_adapter);
+            item_icon1 = itemView.findViewById(R.id.item_icon1);
+            item_icon2 = itemView.findViewById(R.id.item_icon2);
+            item_icon3 = itemView.findViewById(R.id.item_icon3);
+            item_icon4 = itemView.findViewById(R.id.item_icon4);
 
             initializePlayer();
 
-        }
+
+            item_icon1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(icon_change== true) {
+                        Toast.makeText(context, "1번 아이콘 음량 0만들기", Toast.LENGTH_SHORT).show();
+                        item_icon1.setImageResource(R.drawable.img4);
+                        player.setVolume(0);
+                        icon_change= false;
+                    }else {
+                        Toast.makeText(context, "1번 변경 음량 100 만들기", Toast.LENGTH_SHORT).show();
+                        item_icon1.setImageResource(R.drawable.exo_icon_play);
+                        player.setVolume(100);
+                        icon_change= true;
+                    }
+                }
+            });
+            item_icon2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "2번", Toast.LENGTH_SHORT).show();
+                }
+            });
+            item_icon3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "3번", Toast.LENGTH_SHORT).show();
+                }
+            });
+            item_icon4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "4번", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        } // public VH
 
         private void initializePlayer() {
             if (player == null) {
@@ -174,6 +225,25 @@ public class RecAdapter_video extends RecyclerView.Adapter<RecAdapter_video.VH> 
             tvTag.setText(videoitem.getSubTitle());
         }
 
+    } // class VH
+
+    //홀더를 화면에 온전히 보여짐
+    @Override
+    public void onViewAttachedToWindow(@NonNull VH holder){
+        super.onViewDetachedFromWindow(holder);
+        VH vh = (VH)holder;
+
+        vh.player.setPlayWhenReady(true);
     }
+    //홀더를 화면에 온전히 보여지지 않음
+    @Override
+    public void onViewDetachedFromWindow(@NonNull VH holder){
+        super.onViewDetachedFromWindow(holder);
+        VH vh = (VH)holder;
+
+        vh.player.setPlayWhenReady(false);
+        }
+
+
 
 }
