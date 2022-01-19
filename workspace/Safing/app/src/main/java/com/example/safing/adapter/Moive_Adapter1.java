@@ -13,10 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.safing.DTO.Movie_pagerDTO;
 import com.example.safing.R;
-import com.example.safing.VO.BoardVO;
-import com.example.safing.VO.CommonFileVO;
+import com.example.safing.VO.Board_FileVO;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;
@@ -32,19 +30,24 @@ import com.google.android.exoplayer2.util.Util;
 import java.util.ArrayList;
 
 public class Moive_Adapter1 extends RecyclerView.Adapter<Moive_Adapter1.ViewHolder> {
+    boolean speaker_change= true;
+    boolean heart_change= true;
     Context context;
     LayoutInflater inflater;
-    ArrayList<Movie_pagerDTO> mlist = new ArrayList<>();
-    ArrayList<CommonFileVO> flist = new ArrayList<>();
-
     DataSource.Factory factory;
     ProgressiveMediaSource.Factory mediaFactory;
+
+    ArrayList<Board_FileVO> videoItems = new ArrayList<>();
 
     public Moive_Adapter1(Context context) {
         this.context = context;
         this.inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         factory = new DefaultDataSourceFactory(context, "Ex90ExoPlayer"); // 매개 두번째는 임의로 그냥 적음
         mediaFactory = new ProgressiveMediaSource.Factory(factory);
+    }
+
+    public void addDto(Board_FileVO VideoItem) {
+        videoItems.add(VideoItem);
     }
 
     @NonNull
@@ -56,17 +59,25 @@ public class Moive_Adapter1 extends RecyclerView.Adapter<Moive_Adapter1.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.bind(holder,position);
+        Board_FileVO videoItem = videoItems.get(position);
+        holder.setDto(videoItem);
+        String sample = videoItem.getBoard_file_path();
+
+
+        MediaSource mediaSource = holder.buildMediaSource(Uri.parse(sample));
+
+        //prepare
+        holder.player.prepare(mediaSource, true, false);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return videoItems.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        ImageButton movie_pager_imgbtn1, movie_pager_imgbtn2 , movie_pager_imgbtn3 , movie_pager_imgbtn4 , movie_pager_imgbtn5;
-        TextView movie_pager_tv1, movie_pager_tv2, movie_pager_tv3, movie_pager_tv4;
+        ImageView movie_pager_imgbtn1, movie_pager_imgbtn2 , movie_pager_imgbtn3 , movie_pager_imgbtn4;
+        TextView movie_pager_tv1, movie_pager_tv2, movie_pager_tv3;
 
         private PlayerView exoPlayerView;
         private SimpleExoPlayer player;
@@ -80,40 +91,64 @@ public class Moive_Adapter1 extends RecyclerView.Adapter<Moive_Adapter1.ViewHold
             movie_pager_imgbtn2 = itemView.findViewById(R.id.movie_pager_imgbtn2);
             movie_pager_imgbtn3 = itemView.findViewById(R.id.movie_pager_imgbtn3);
             movie_pager_imgbtn4 = itemView.findViewById(R.id.movie_pager_imgbtn4);
-            movie_pager_imgbtn5 = itemView.findViewById(R.id.movie_pager_imgbtn5);
 
             movie_pager_tv1 = itemView.findViewById(R.id.movie_pager_tv1);
             movie_pager_tv2 = itemView.findViewById(R.id.movie_pager_tv2);
             movie_pager_tv3 = itemView.findViewById(R.id.movie_pager_tv3);
-            movie_pager_tv4 = itemView.findViewById(R.id.movie_pager_tv4);
 
             //exoplayer 실행
             initializePlayer();
 
-            movie_pager_tv2.setOnClickListener(new View.OnClickListener() {
+
+            movie_pager_imgbtn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(icon_change== true) {
+                    if(speaker_change== true) {
                         Toast.makeText(context, "1번 아이콘 음량 0만들기", Toast.LENGTH_SHORT).show();
-                        movie_pager_imgbtn2.setImageResource(R.drawable.mute);
+                        movie_pager_imgbtn1.setImageResource(R.drawable.mute);
                         player.setVolume(0);
-                        icon_change= false;
+                        speaker_change= false;
                     }else {
                         Toast.makeText(context, "1번 변경 음량 100 만들기", Toast.LENGTH_SHORT).show();
-                        movie_pager_imgbtn2.setImageResource(R.drawable.speaker);
+                        movie_pager_imgbtn1.setImageResource(R.drawable.speaker);
                         player.setVolume(100);
-                        icon_change= true;
+                        speaker_change= true;
                     }
+                }
+            });
+
+            movie_pager_imgbtn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
+            movie_pager_imgbtn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(heart_change== true) {
+                        Toast.makeText(context, "좋아요", Toast.LENGTH_SHORT).show();
+                        movie_pager_imgbtn3.setImageResource(R.drawable.heart2);
+                        heart_change= false;
+                    }else {
+                        Toast.makeText(context, "좋아요 취소", Toast.LENGTH_SHORT).show();
+                        movie_pager_imgbtn3.setImageResource(R.drawable.heart1);
+                        heart_change= true;
+                    }
+                }
+            });
+
+            movie_pager_imgbtn4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
                 }
             });
 
 
 
         }//public ViewHolder
-
-        public  void bind(ViewHolder holder, int postion){
-
-        }//bind()
 
         private void initializePlayer() {
             if (player == null) {
@@ -169,6 +204,13 @@ public class Moive_Adapter1 extends RecyclerView.Adapter<Moive_Adapter1.ViewHold
             }
 
         }
+
+        public void setDto(Board_FileVO videoitem) {
+            movie_pager_tv1.setText(videoitem.getBoard_file_id()+"");
+            movie_pager_tv2.setText(videoitem.getMember_id());
+            movie_pager_tv3.setText(videoitem.getBoard_file_name());
+        }
+
 
     }//class ViewHolder
 

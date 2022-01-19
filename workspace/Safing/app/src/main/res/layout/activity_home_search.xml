@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -50,21 +51,23 @@
                     android:weightSum="10"
                     android:layout_marginRight="20dp">
                     <TextView
+                        android:id="@+id/search_cam"
                         android:layout_width="350dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="9"
-                        android:text="Popular Spot"
+                        android:text="캠핑장 검색"
                         android:textSize="20dp"
                         android:layout_marginVertical="10dp"
                         android:layout_marginRight="100dp"
                         android:textStyle="bold"
-                        android:textColor="#237A27"/>
+                        android:textColor="#237A27"
+                        android:fontFamily="@font/ibmplexsanslight"/>
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:src="@drawable/right1"
+                        android:src="@drawable/right"
                         android:layout_gravity="center"/>
                 </LinearLayout>
                 <androidx.recyclerview.widget.RecyclerView

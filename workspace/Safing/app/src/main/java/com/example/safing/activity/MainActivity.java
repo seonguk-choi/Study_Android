@@ -12,6 +12,7 @@ import com.example.safing.R;
 import com.example.safing.fragment.HomeFragment;
 import com.example.safing.fragment.IoTFragment;
 import com.example.safing.fragment.MovieFragment;
+import com.example.safing.fragment.MypageFragment;
 import com.example.safing.fragment.ShopFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(new ShopFragment(MainActivity.this), "Shopping");
                     return true;
                 }else if(item.getItemId() == R.id.tab5){
-                    changeFragment(new ShopFragment(MainActivity.this) , "My");
+                    changeFragment(new MypageFragment(MainActivity.this) , "My");
                     return true;
                 }
                 return false;
@@ -72,6 +73,5 @@ public class MainActivity extends AppCompatActivity {
         if (System.currentTimeMillis() <= backKeyPressedTime + 2500) {
             finish();
         }
-    }
     }
 }
