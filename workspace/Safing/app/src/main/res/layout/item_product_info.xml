@@ -10,11 +10,13 @@
     app:cardCornerRadius="20dp"
     android:layout_margin="20dp">
         <ImageView
+            android:id="@+id/product_img1"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:src="@drawable/package2"
             android:scaleType="fitXY"/>
     <ImageView
+        android:id="@+id/product_img2"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/bookmark1"
@@ -22,6 +24,7 @@
         android:layout_margin="10dp"/>
 </androidx.cardview.widget.CardView>
     <TextView
+        android:id="@+id/product_tv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="[텐트명] 패키지 이름 키트 들어올 부분"
@@ -53,12 +56,14 @@
             android:src="@drawable/star"
             android:layout_margin="5dp"/>
        <TextView
+           android:id="@+id/product_tv2"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="4/5"
            android:layout_marginTop="5dp"
            android:textColor="#434343"/>
         <TextView
+            android:id="@+id/product_tv3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="(256)"
@@ -72,6 +77,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
+            android:id="@+id/product_tv4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -79,6 +85,7 @@
             android:textStyle="bold"
             android:textColor="#A83232"/>
         <TextView
+            android:id="@+id/product_tv5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -92,6 +99,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="5dp">
         <TextView
+            android:id="@+id/product_tv6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -100,6 +108,7 @@
             android:padding="3dp"
             android:textColor="#735340"/>
         <TextView
+            android:id="@+id/product_tv7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -108,6 +117,7 @@
             android:padding="3dp"
             android:textColor="#735340"/>
         <TextView
+            android:id="@+id/product_tv8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -116,6 +126,7 @@
             android:padding="3dp"
             android:textColor="#735340"/>
         <TextView
+            android:id="@+id/product_tv9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -123,6 +134,5 @@
             android:text="#테마4"
             android:padding="3dp"
             android:textColor="#735340"/>
-
     </LinearLayout>
 </LinearLayout>

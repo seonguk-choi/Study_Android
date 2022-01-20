@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">20dp</item>
+        <item name="android:fontFamily">nanumgothic.ttf</item>
+        <item name="android:shadowRadius">0.5</item>
+        <item name="android:shadowDx">0.5</item>
+        <item name="android:shadowDy">0.5</item>
+        <item name="android:shadowColor">#888888</item>
+    </style>
+</resources>

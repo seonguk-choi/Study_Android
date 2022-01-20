@@ -7,25 +7,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.safing.DTO.SafeZoneRecDTO;
 import com.example.safing.R;
 import com.example.safing.activity.ThemePagerActivity;
-import com.example.safing.DTO.SafeZoneRecDTO;
 
 import java.util.ArrayList;
 
-public class SafeZoneRecAdapter extends RecyclerView.Adapter<SafeZoneRecAdapter.ViewHolder> {
+public class Shop_Rec_Adapter extends RecyclerView.Adapter<Shop_Rec_Adapter.ViewHolder> {
 
     Context context;
     ArrayList<SafeZoneRecDTO> list;
     LayoutInflater inflater;
-    ImageView sfimgv ;
-    TextView sftext;
 
-    public SafeZoneRecAdapter(Context context, ArrayList<SafeZoneRecDTO> list) {
+    public Shop_Rec_Adapter(Context context) {
         this.context = context;
         this.list = list;
         this.inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -36,7 +35,7 @@ public class SafeZoneRecAdapter extends RecyclerView.Adapter<SafeZoneRecAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemview = inflater.inflate(R.layout.rec_item_sfzone, parent , false );
+        View itemview = inflater.inflate(R.layout.item_product_info, parent , false );
         return new ViewHolder(itemview);
     }
 
@@ -48,21 +47,30 @@ public class SafeZoneRecAdapter extends RecyclerView.Adapter<SafeZoneRecAdapter.
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return 5;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+        ImageView product_img1;
+        TextView product_tv1, product_tv2, product_tv3, product_tv4, product_tv5, product_tv6, product_tv7, product_tv8, product_tv9;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            sfimgv = itemView.findViewById(R.id.sfimgv);
-            sftext = itemView.findViewById(R.id.sftext);
+            product_img1 = itemView.findViewById(R.id.product_img1);
+            product_tv1 = itemView.findViewById(R.id.product_tv1);
+            product_tv2 = itemView.findViewById(R.id.product_tv2);
+            product_tv3 = itemView.findViewById(R.id.product_tv3);
+            product_tv4 = itemView.findViewById(R.id.product_tv4);
+            product_tv5 = itemView.findViewById(R.id.product_tv5);
+            product_tv6 = itemView.findViewById(R.id.product_tv6);
+            product_tv7 = itemView.findViewById(R.id.product_tv7);
+            product_tv8 = itemView.findViewById(R.id.product_tv8);
+            product_tv9 = itemView.findViewById(R.id.product_tv9);
 
-            sfimgv.setOnClickListener(new View.OnClickListener() {
+            product_img1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, ThemePagerActivity.class);
-                    context.startActivity(intent);
+                    Toast.makeText(context, "상품 상세내용", Toast.LENGTH_SHORT).show();
 
                 }
             });
