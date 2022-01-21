@@ -57,6 +57,9 @@
         android:theme="@style/Theme.Safing"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.ProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.CamInfoActivity"
             android:exported="false" />
         <activity
@@ -80,6 +83,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
