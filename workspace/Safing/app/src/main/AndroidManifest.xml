@@ -57,7 +57,13 @@
         android:theme="@style/Theme.Safing"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.ProductActivity"
+            android:name=".activity.Review_Image_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Product_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Product_Package_Activity"
             android:exported="false" />
         <activity
             android:name=".activity.CamInfoActivity"

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".activity.Review_Image_Activity">
+    <ImageButton
+        android:id="@+id/review_image_btn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/left1"
+        android:scaleType="fitCenter"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_round1"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id="@+id/Review_Image_Rec"
+        android:orientation="horizontal"/>
+</FrameLayout>

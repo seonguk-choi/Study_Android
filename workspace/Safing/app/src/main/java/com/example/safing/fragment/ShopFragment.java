@@ -88,40 +88,28 @@ public class ShopFragment extends Fragment{
             public void onTabSelected(TabLayout.Tab tab) {
                 if(tab.getPosition() == 0){
                     Toast.makeText(context, "tab1", Toast.LENGTH_SHORT).show();
-                    shop_rec2.setLayoutManager(manager);
-                    Shop_Rec_Adapter adapter_rec2 = new Shop_Rec_Adapter(context);
-                    shop_rec2.setAdapter(adapter_rec2);
+                    setRec2();
                 }
                 if(tab.getPosition() == 1){
                     Toast.makeText(context, "tab2", Toast.LENGTH_SHORT).show();
-                    shop_rec2.setLayoutManager(manager);
-                    Shop_Rec_Adapter adapter_rec2 = new Shop_Rec_Adapter(context);
-                    shop_rec2.setAdapter(adapter_rec2);
+                    setRec2();
                 }
                 if(tab.getPosition() == 2){
                     Toast.makeText(context, "tab3", Toast.LENGTH_SHORT).show();
-                    shop_rec2.setLayoutManager(manager);
-                    Shop_Rec_Adapter adapter_rec2 = new Shop_Rec_Adapter(context);
-                    shop_rec2.setAdapter(adapter_rec2);
+                    setRec2();
                 }
                 if(tab.getPosition() == 3){
                     Toast.makeText(context, "tab4", Toast.LENGTH_SHORT).show();
-                    shop_rec2.setLayoutManager(manager);
-                    Shop_Rec_Adapter adapter_rec2 = new Shop_Rec_Adapter(context);
-                    shop_rec2.setAdapter(adapter_rec2);
+                    setRec2();
                 }
                 if(tab.getPosition() == 4){
 
                     Toast.makeText(context, "tab5", Toast.LENGTH_SHORT).show();
-                    shop_rec2.setLayoutManager(manager);
-                    Shop_Rec_Adapter adapter_rec2 = new Shop_Rec_Adapter(context);
-                    shop_rec2.setAdapter(adapter_rec2);
+                    setRec2();
                 }
                 if(tab.getPosition() == 5){
                     Toast.makeText(context, "tab6", Toast.LENGTH_SHORT).show();
-                    shop_rec2.setLayoutManager(manager);
-                    Shop_Rec_Adapter adapter_rec2 = new Shop_Rec_Adapter(context);
-                    shop_rec2.setAdapter(adapter_rec2);
+                    setRec2();
                 }
             }
 

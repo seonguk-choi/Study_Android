@@ -8,4 +8,8 @@
         <item name="android:shadowDy">0.5</item>
         <item name="android:shadowColor">#888888</item>
     </style>
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#d7d7d7</item>
+        <item name="colorControlActivated">#D51158</item>
+    </style>
 </resources>

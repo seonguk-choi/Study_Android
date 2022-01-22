@@ -18,8 +18,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottom_nav;
-    private long backKeyPressedTime = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,51 +25,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bottom_nav = findViewById(R.id.bottom_nav);
 
-        changeFragment(new HomeFragment(MainActivity.this) , "Moive");
-
-
-
+        changeFragment(new HomeFragment(MainActivity.this));
 
         bottom_nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if(item.getItemId() == R.id.tab1){
-                    changeFragment(new HomeFragment(MainActivity.this) , "Moive");
+                    changeFragment(new HomeFragment(MainActivity.this));
                     return true;
                 }else if(item.getItemId() == R.id.tab2){
-                    changeFragment(new MovieFragment(MainActivity.this) , "Moive");
+                    changeFragment(new MovieFragment(MainActivity.this));
                     return true;
                 }else if(item.getItemId() == R.id.tab3){
-                    changeFragment(new IoTFragment(MainActivity.this), "IoT");
+                    changeFragment(new IoTFragment(MainActivity.this));
                     return true;
                 }else if(item.getItemId() == R.id.tab4){
-                    changeFragment(new ShopFragment(MainActivity.this), "Shopping");
+                    changeFragment(new ShopFragment(MainActivity.this));
                     return true;
                 }else if(item.getItemId() == R.id.tab5){
-                    changeFragment(new MypageFragment(MainActivity.this) , "My");
+                    changeFragment(new MypageFragment(MainActivity.this));
                     return true;
                 }
                 return false;
             }
         });
-
     }
-    public void changeFragment(Fragment fragment , String msg){
+    public void changeFragment(Fragment fragment){
         getSupportFragmentManager().beginTransaction().replace(R.id.container , fragment).commit();
-    }
-
-
-
-    @Override
-    public void onBackPressed() {
-        if (System.currentTimeMillis() > backKeyPressedTime + 2500) {
-            backKeyPressedTime = System.currentTimeMillis();
-            Toast.makeText(this, "한 번 더 누르시면 종료됩니다.", Toast.LENGTH_LONG);
-            return;
-        }
-
-        if (System.currentTimeMillis() <= backKeyPressedTime + 2500) {
-            finish();
-        }
     }
 }

@@ -110,8 +110,8 @@
             android:stepSize="1"
             android:numStars="5"
             android:isIndicator="false"
-            android:layout_margin="10dp">
-
+            android:layout_margin="10dp"
+            android:theme="@style/RatingBar">
         </RatingBar>
         <TextView
             android:layout_width="match_parent"

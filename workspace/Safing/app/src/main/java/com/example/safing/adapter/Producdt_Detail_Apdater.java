@@ -13,22 +13,22 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.safing.DTO.SafeZoneRecDTO;
+import com.example.safing.DTO.Product_DetailDTO;
 import com.example.safing.DTO.Shop_PackageDTO;
 import com.example.safing.R;
+import com.example.safing.activity.Product_Activity;
 import com.example.safing.activity.Product_Package_Activity;
-import com.example.safing.activity.ThemePagerActivity;
 
 import java.util.ArrayList;
 
-public class Shop_Package_Apdater extends RecyclerView.Adapter<Shop_Package_Apdater.ViewHolder> {
+public class Producdt_Detail_Apdater extends RecyclerView.Adapter<Producdt_Detail_Apdater.ViewHolder> {
 
     Context context;
-    ArrayList<Shop_PackageDTO> list;
+    ArrayList<Product_DetailDTO> list;
     LayoutInflater inflater;
 
 
-    public Shop_Package_Apdater(Context context, ArrayList<Shop_PackageDTO> list) {
+    public Producdt_Detail_Apdater(Context context) {
         this.context = context;
         this.list = list;
         this.inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -39,7 +39,7 @@ public class Shop_Package_Apdater extends RecyclerView.Adapter<Shop_Package_Apda
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemview = inflater.inflate(R.layout.rec_item_sfzone, parent , false );
+        View itemview = inflater.inflate(R.layout.item_product_detail_rec, parent , false );
         return new ViewHolder(itemview);
     }
 
@@ -51,34 +51,29 @@ public class Shop_Package_Apdater extends RecyclerView.Adapter<Shop_Package_Apda
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return 5;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView sfimgv ;
-        TextView sftext;
-        LinearLayout rec_item_theme_linearlayout;
+        ImageView item_product_detail_img;
+        TextView item_product_detail_tv1, item_product_detail_tv2, item_product_detail_tv3;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            sfimgv = itemView.findViewById(R.id.sfimgv);
-            sftext = itemView.findViewById(R.id.sftext);
-            rec_item_theme_linearlayout = itemView.findViewById(R.id.rec_item_theme_linearlayout);
+            item_product_detail_img = itemView.findViewById(R.id.item_product_detail_img);
+            item_product_detail_tv1 = itemView.findViewById(R.id.item_product_detail_tv1);
+            item_product_detail_tv2 = itemView.findViewById(R.id.item_product_detail_tv2);
+            item_product_detail_tv3 = itemView.findViewById(R.id.item_product_detail_tv3);
 
 
-            rec_item_theme_linearlayout.setOnClickListener(new View.OnClickListener() {
+            item_product_detail_img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "패키지상품", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(context, Product_Package_Activity.class);
+                    Toast.makeText(context, "선택 상품으로 이동", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, Product_Activity.class);
                     context.startActivity(intent);
                 }
             });
-
-
-
-
-
         }
         public void binding(ViewHolder holder, int position){
 

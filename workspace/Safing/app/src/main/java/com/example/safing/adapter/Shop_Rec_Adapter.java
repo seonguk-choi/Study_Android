@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.safing.DTO.SafeZoneRecDTO;
 import com.example.safing.R;
-import com.example.safing.activity.ProductActivity;
-import com.example.safing.activity.ThemePagerActivity;
+import com.example.safing.activity.Product_Activity;
+import com.example.safing.activity.Product_Package_Activity;
 
 import java.util.ArrayList;
 
@@ -73,7 +73,7 @@ public class Shop_Rec_Adapter extends RecyclerView.Adapter<Shop_Rec_Adapter.View
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(context, "상품 상세내용", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(context, ProductActivity.class);
+                    Intent intent = new Intent(context, Product_Activity.class);
                     context.startActivity(intent);
                 }
             });
@@ -92,10 +92,6 @@ public class Shop_Rec_Adapter extends RecyclerView.Adapter<Shop_Rec_Adapter.View
 
                 }
             });
-
-
-
-
 
         }
         public void binding(ViewHolder holder, int position){

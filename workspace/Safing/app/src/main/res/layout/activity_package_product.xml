@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Product_Activity"
+    tools:context=".activity.Product_Package_Activity"
     android:background="#F9F9FB"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
@@ -117,6 +117,26 @@
                                     android:textStyle="bold"
                                     android:layout_gravity="center"/>
                             </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="패키지 구성"
+                                android:textSize="20dp"
+                                android:layout_marginTop="30dp"
+                                android:paddingLeft="20dp"
+                                android:paddingVertical="5dp"
+                                android:background="@drawable/text_round2"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:fontFamily="@font/nanumgothic"
+                                android:layout_marginHorizontal="20dp" />
+                            <ImageView
+                                android:id="@+id/shop_product_img1"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:layout_margin="20dp"
+                                android:src="@drawable/camimg2"
+                                android:scaleType="fitXY"/>
                             <com.google.android.material.tabs.TabLayout
                                 android:layout_marginTop="20dp"
                                 android:id="@+id/shop_product_tab1"
@@ -132,7 +152,7 @@
                             <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/shop_container2"/>
+                                android:id="@+id/shop_container1"/>
                             <com.google.android.material.tabs.TabLayout
                                 android:id="@+id/shop_product_tab2"
                                 android:layout_width="match_parent"
