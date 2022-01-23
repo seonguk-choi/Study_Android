@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/menu_noti"
+        android:id="@+id/menu_cart"
         app:showAsAction="ifRoom"
         android:enabled="true"
         android:icon="@drawable/cart"
         android:title="장바구니"/>
     <item
-        android:id="@+id/menu_cus"
+        android:id="@+id/menu_purchasehistory"
         app:showAsAction="ifRoom"
         android:enabled="true"
         android:icon="@drawable/purchase"
         android:title="구매내역"/>
     <item
-        android:id="@+id/menu_hr"
+        android:id="@+id/menu_customerservice"
         app:showAsAction="ifRoom"
         android:enabled="true"
         android:icon="@drawable/customer_service"

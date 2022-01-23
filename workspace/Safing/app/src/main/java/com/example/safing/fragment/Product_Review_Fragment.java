@@ -13,9 +13,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.safing.DTO.Product_Cart_RecDTO;
+import com.example.safing.DTO.Product_ReviewlDTO;
 import com.example.safing.R;
 
 import com.example.safing.adapter.Producdt_Review_Apdater;
+import com.example.safing.adapter.Product_Cart_Rec_Adapter;
+
+import java.util.ArrayList;
 
 public class Product_Review_Fragment extends Fragment {
     Context context;
@@ -33,10 +38,17 @@ public class Product_Review_Fragment extends Fragment {
 
         product_review_rec = rootView.findViewById(R.id.product_review_rec);
 
-        product_review_rec.setLayoutManager(manager);
-        Producdt_Review_Apdater adapter_pager1 = new Producdt_Review_Apdater(context);
-        product_review_rec.setAdapter(adapter_pager1);
+        setRec1();
 
         return rootView;
+    }
+
+    public void setRec1(){
+        manager = new LinearLayoutManager(context, RecyclerView.VERTICAL, false);
+
+        product_review_rec.setLayoutManager(manager);
+        Producdt_Review_Apdater adapter_rec1 = new Producdt_Review_Apdater(context);
+        product_review_rec.setAdapter(adapter_rec1);
+
     }
 }

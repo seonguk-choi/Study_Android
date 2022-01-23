@@ -1,12 +1,15 @@
 package com.example.safing.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -18,28 +21,36 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.safing.R;
 import com.example.safing.adapter.Shop_Product_Pager_Adapter;
+import com.example.safing.fragment.Product_Cart_Fragment;
 import com.example.safing.fragment.Product_Detail_Fragment;
+import com.example.safing.fragment.Product_PurchaseHistory_Fragment;
 import com.example.safing.fragment.Product_Review_Fragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 public class Product_Package_Activity extends AppCompatActivity {
     ViewPager2 pager;
-    TabLayout tab_layout;
+    TabLayout shop_product_tab1;
     Toolbar toolbar;
     SwipeRefreshLayout swipe;
     ImageView shop_product_img1;
+    Button shop_product_btn1;
+    NavigationView shop_product_view;
+    MainActivity mainActivity = new MainActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_package_product);
 
-        tab_layout = findViewById(R.id.shop_product_tab1);
+        shop_product_tab1 = findViewById(R.id.shop_product_tab1);
+
         pager = findViewById(R.id.shop_product_Pager);
         toolbar = findViewById(R.id.shop_product_toolbar);
         swipe = findViewById(R.id.shop_product_swipe);
         shop_product_img1 = findViewById(R.id.shop_product_img1);
+        shop_product_btn1 = findViewById(R.id.shop_product_btn1);
+        shop_product_view = findViewById(R.id.shop_product_view);
 
         //========= 햄버커 기능 ==============
 
@@ -53,9 +64,7 @@ public class Product_Package_Activity extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView tab_view = findViewById(R.id.shop_view);
-
-        View nav_headerview = tab_view.getHeaderView(0);
+        View nav_headerview = shop_product_view.getHeaderView(0);
         ImageView header_imge = nav_headerview.findViewById(R.id.header_imge);
         TextView header_text= nav_headerview.findViewById(R.id.header_text);
 
@@ -64,8 +73,9 @@ public class Product_Package_Activity extends AppCompatActivity {
 
         //========= 탭 기능 ==============
 
-        tab_layout.addTab(tab_layout.newTab().setText("상세정보"));
-        tab_layout.addTab(tab_layout.newTab().setText("리뷰"));
+        shop_product_tab1.addTab(shop_product_tab1.newTab().setText("상세정보"));
+        shop_product_tab1.addTab(shop_product_tab1.newTab().setText("리뷰"));
+
 
         Shop_Product_Pager_Adapter adapter_pager1 = new Shop_Product_Pager_Adapter(Product_Package_Activity.this);
         pager.setAdapter(adapter_pager1);
@@ -74,7 +84,7 @@ public class Product_Package_Activity extends AppCompatActivity {
 
         changeFragment(new Product_Detail_Fragment(Product_Package_Activity.this));
 
-        tab_layout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        shop_product_tab1.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
@@ -96,12 +106,41 @@ public class Product_Package_Activity extends AppCompatActivity {
             }
         });
 
+        shop_product_btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Product_Package_Activity.this, Product_Purchase_Activity.class);
+                startActivity(intent);
+            }
+        });
+
         swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 swipe.setRefreshing(false);
             }
         });
+
+        //============= navigation view 기능=====
+
+        shop_product_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if(item.getItemId() == R.id.menu_cart){
+                    Intent intent = new Intent(Product_Package_Activity.this, MainActivity.class);
+                    startActivity(intent);
+                    mainActivity.changeFragment(new Product_Cart_Fragment(Product_Package_Activity.this));
+                }else if(item.getItemId() == R.id.menu_purchasehistory){
+                    Intent intent = new Intent(Product_Package_Activity.this, MainActivity.class);
+                    startActivity(intent);
+                    mainActivity.changeFragment(new Product_PurchaseHistory_Fragment(Product_Package_Activity.this));
+                }else if(item.getItemId() == R.id.menu_customerservice){
+                }
+                return false;
+            }
+        });
+
+
     }
     public void changeFragment(Fragment fragment){
         getSupportFragmentManager().beginTransaction().replace(R.id.shop_container1 , fragment).commit();

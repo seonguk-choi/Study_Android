@@ -1,12 +1,15 @@
 package com.example.safing.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -14,10 +17,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.safing.DTO.Product_PurchaseHistory_RecDTO;
 import com.example.safing.DTO.Product_ReviewlDTO;
 import com.example.safing.R;
+import com.example.safing.activity.Product_Activity;
 import com.example.safing.activity.Product_Package_Activity;
 import com.example.safing.activity.Review_Image_Activity;
 
@@ -32,12 +38,10 @@ public class Producdt_Review_Apdater extends RecyclerView.Adapter<Producdt_Revie
     ArrayList<Product_ReviewlDTO> list;
     LayoutInflater inflater;
 
-
     public Producdt_Review_Apdater(Context context) {
         this.context = context;
         this.list = list;
         this.inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
     }
 
 
@@ -50,16 +54,17 @@ public class Producdt_Review_Apdater extends RecyclerView.Adapter<Producdt_Revie
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        binding(holder, position);
     }
 
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 5;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+
         CircleImageView item_product_review_profile;
         RatingBar item_product_review_rating;
         TextView item_product_review_tv1, item_product_review_tv2, item_product_review_tv3, item_product_review_tv4;
@@ -69,8 +74,10 @@ public class Producdt_Review_Apdater extends RecyclerView.Adapter<Producdt_Revie
         Drawable image1 = context.getResources().getDrawable(R.drawable.button_left_image_like1);
         Drawable image2 = context.getResources().getDrawable(R.drawable.button_left_image_like2);
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
             item_product_review_profile = itemView.findViewById(R.id.item_product_review_profile);
             item_product_review_rating = itemView.findViewById(R.id.item_product_review_rating);
             item_product_review_tv1 = itemView.findViewById(R.id.item_product_review_tv1);
@@ -80,7 +87,6 @@ public class Producdt_Review_Apdater extends RecyclerView.Adapter<Producdt_Revie
             item_product_review_img1 = itemView.findViewById(R.id.item_product_review_img1);
             item_product_review_img2 = itemView.findViewById(R.id.item_product_review_img2);
             item_product_review_btn = itemView.findViewById(R.id.item_product_review_btn);
-
 
 
             item_product_review_rating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -107,27 +113,24 @@ public class Producdt_Review_Apdater extends RecyclerView.Adapter<Producdt_Revie
                 }
             });
 
-            item_product_review_img1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, Review_Image_Activity.class);
-                    context.startActivity(intent);
-                }
-            });
-            item_product_review_img2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, Review_Image_Activity.class);
-                    context.startActivity(intent);
-                }
-            });
+
 
         }
-
-
-
-        public void binding(ViewHolder holder, int position){
-
-        }
+    }
+    public void binding(ViewHolder holder, int position){
+        holder.item_product_review_img1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Review_Image_Activity.class);
+                context.startActivity(intent);
+            }
+        });
+        holder.item_product_review_img2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Review_Image_Activity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 }

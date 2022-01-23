@@ -57,8 +57,12 @@
         android:theme="@style/Theme.Safing"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.Review_Image_Activity"
+            android:name=".activity.Product_Purchase_Activity"
             android:exported="false" />
+        <activity
+            android:name=".activity.Review_Image_Activity"
+            android:exported="false"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"/>
         <activity
             android:name=".activity.Product_Activity"
             android:exported="false" />

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/button_round4"
-    android:layout_marginVertical="10dp">
+    android:layout_marginVertical="20dp"
+    android:paddingBottom="20dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -125,16 +126,21 @@
             android:textSize="15dp"
             android:textStyle="bold"
             android:fontFamily="@font/nanumgothic"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/item_product_review_btn"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:paddingHorizontal="10dp"
-            android:layout_marginLeft="110dp"
-            android:text="10"
-            android:textColor="#8C8C8C"
-            android:background="@drawable/button_round2"
-            android:drawableLeft="@drawable/button_left_image_like1"
-            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/item_product_review_btn"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:paddingHorizontal="10dp"
+                android:text="10"
+                android:textColor="#8C8C8C"
+                android:background="@drawable/button_round2"
+                android:drawableLeft="@drawable/button_left_image_like1"
+                />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

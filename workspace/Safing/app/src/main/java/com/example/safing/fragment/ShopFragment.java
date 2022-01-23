@@ -4,13 +4,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -19,9 +20,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.example.safing.DTO.SafeZoneRecDTO;
 import com.example.safing.DTO.Shop_PackageDTO;
 import com.example.safing.R;
+import com.example.safing.activity.MainActivity;
 import com.example.safing.adapter.Shop_Rec_Adapter;
 import com.example.safing.adapter.Shop_Package_Apdater;
 import com.google.android.material.navigation.NavigationView;
@@ -36,6 +37,8 @@ public class ShopFragment extends Fragment{
     RecyclerView shop_rec1, shop_rec2;
     LinearLayoutManager manager;
     SwipeRefreshLayout swipe;
+    NavigationView shop_view;
+    MainActivity mainActivity = new MainActivity();
 
     public ShopFragment(Context context){
         this.context = context;
@@ -52,6 +55,9 @@ public class ShopFragment extends Fragment{
         shop_rec2 = rootView.findViewById(R.id.shop_rec2);
         toolbar = rootView.findViewById(R.id.toolbar);
         swipe = rootView.findViewById(R.id.spot_swipe);
+        shop_view = rootView.findViewById(R.id.shop_view);
+
+        mainActivity = (MainActivity) getActivity();
 
         //========= 햄버커 기능 ==============
 
@@ -65,9 +71,7 @@ public class ShopFragment extends Fragment{
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView tab_view = rootView.findViewById(R.id.shop_view);
-
-        View nav_headerview = tab_view.getHeaderView(0);
+        View nav_headerview = shop_view.getHeaderView(0);
         ImageView header_imge = nav_headerview.findViewById(R.id.header_imge);
         TextView header_text= nav_headerview.findViewById(R.id.header_text);
 
@@ -135,6 +139,20 @@ public class ShopFragment extends Fragment{
             }
         });
 
+        //============= navigation view 기능=====
+
+        shop_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if(item.getItemId() == R.id.menu_cart){
+                    mainActivity.changeFragment(new Product_Cart_Fragment(context));
+                }else if(item.getItemId() == R.id.menu_purchasehistory){
+                    mainActivity.changeFragment(new Product_Cart_Fragment(context));
+                }else if(item.getItemId() == R.id.menu_customerservice){
+                }
+                return false;
+            }
+        });
 
         return rootView;
     }
