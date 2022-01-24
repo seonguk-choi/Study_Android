@@ -13,20 +13,21 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.safing.DTO.SafeZoneRecDTO;
 import com.example.safing.DTO.Shop_PackageDTO;
 import com.example.safing.R;
-import com.example.safing.activity.Product_Package_Activity;
-import com.example.safing.activity.ThemePagerActivity;
+import com.example.safing.activity.MainActivity;
+import com.example.safing.async.OnItemClickListener;
+import com.example.safing.fragment.Product_Cart_Fragment;
+import com.example.safing.fragment.Product_Package_Fragment;
 
 import java.util.ArrayList;
 
-public class Shop_Package_Apdater extends RecyclerView.Adapter<Shop_Package_Apdater.ViewHolder> {
+public class Shop_Package_Apdater extends RecyclerView.Adapter<Shop_Package_Apdater.ViewHolder> implements OnItemClickListener {
 
     Context context;
     ArrayList<Shop_PackageDTO> list;
     LayoutInflater inflater;
-
+    OnItemClickListener listener;
 
     public Shop_Package_Apdater(Context context, ArrayList<Shop_PackageDTO> list) {
         this.context = context;
@@ -54,12 +55,22 @@ public class Shop_Package_Apdater extends RecyclerView.Adapter<Shop_Package_Apda
         return list.size();
     }
 
+    @Override
+    public void onItemClick_package(ViewHolder holderm, View view, int position) {
+
+    }
+
+    @Override
+    public void onItemClick_product(Shop_Rec_Adapter.ViewHolder holderm, View view, int position) {
+
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView sfimgv ;
         TextView sftext;
         LinearLayout rec_item_theme_linearlayout;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
             sfimgv = itemView.findViewById(R.id.sfimgv);
             sftext = itemView.findViewById(R.id.sftext);
@@ -69,9 +80,11 @@ public class Shop_Package_Apdater extends RecyclerView.Adapter<Shop_Package_Apda
             rec_item_theme_linearlayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "패키지상품", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(context, Product_Package_Activity.class);
-                    context.startActivity(intent);
+                    int position = getAdapterPosition();
+                    if(listener != null){
+                        listener.onItemClick_package(ViewHolder.this,
+                                v, position);
+                    }
                 }
             });
 

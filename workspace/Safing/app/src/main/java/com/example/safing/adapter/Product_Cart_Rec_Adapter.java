@@ -92,7 +92,7 @@ public class Product_Cart_Rec_Adapter extends RecyclerView.Adapter<Product_Cart_
                     //AlertDilog Custom 인터넷 예제보고 공부해보기
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
                     builder.setTitle("주문삭제 확인");
-                    builder.setMessage("선택하신 주문을 \n 삭제하시겠습니까? ");
+                    builder.setMessage("선택하신 주문을\n삭제하시겠습니까? ");
                     builder.setIcon(R.drawable.question);
 
                     builder.setPositiveButton("예", new DialogInterface.OnClickListener() {

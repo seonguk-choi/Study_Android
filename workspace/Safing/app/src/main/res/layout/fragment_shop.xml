@@ -89,7 +89,7 @@
                         app:tabMode="scrollable"
                         app:tabTextColor="#85897B"
                         app:tabIndicatorHeight="0dp"
-                        app:tabBackground="@drawable/tab_background"
+                        app:tabBackground="@drawable/tab_background1"
                         app:tabSelectedTextColor="#F9F9FB"
                         app:tabRippleColor="@android:color/transparent"
                         android:layout_marginHorizontal="10dp"

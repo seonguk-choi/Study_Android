@@ -2,7 +2,6 @@ package com.example.safing.adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +17,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.safing.DTO.Product_PurchaseHistory_RecDTO;
-import com.example.safing.DTO.SafeZoneRecDTO;
 import com.example.safing.R;
-import com.example.safing.activity.Product_Activity;
-import com.example.safing.activity.ThemePagerActivity;
 
 import java.util.ArrayList;
 

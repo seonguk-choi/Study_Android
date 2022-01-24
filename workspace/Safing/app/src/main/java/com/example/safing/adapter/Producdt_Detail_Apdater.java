@@ -1,28 +1,21 @@
 package com.example.safing.adapter;
 
+import android.Manifest;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.safing.DTO.Product_DetailDTO;
-import com.example.safing.DTO.Product_PurchaseHistory_RecDTO;
-import com.example.safing.DTO.Shop_PackageDTO;
 import com.example.safing.R;
-import com.example.safing.activity.Product_Activity;
-import com.example.safing.activity.Product_Package_Activity;
+import com.example.safing.activity.MainActivity;
+import com.example.safing.fragment.Product_Cart_Fragment;
 
 import java.util.ArrayList;
 
@@ -31,7 +24,6 @@ public class Producdt_Detail_Apdater extends RecyclerView.Adapter<Producdt_Detai
     Context context;
     ArrayList<Product_DetailDTO> list;
     LayoutInflater inflater;
-
     public Producdt_Detail_Apdater(Context context) {
         this.context = context;
         this.list = list;
@@ -63,6 +55,10 @@ public class Producdt_Detail_Apdater extends RecyclerView.Adapter<Producdt_Detai
         ImageView item_product_detail_img;
         TextView item_product_detail_tv1, item_product_detail_tv2, item_product_detail_tv3;
 
+        public ImageView getItem_product_detail_img() {
+            return item_product_detail_img;
+        }
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -75,8 +71,7 @@ public class Producdt_Detail_Apdater extends RecyclerView.Adapter<Producdt_Detai
             item_product_detail_img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, Product_Activity.class);
-                    context.startActivity(intent);
+
                 }
             });
 

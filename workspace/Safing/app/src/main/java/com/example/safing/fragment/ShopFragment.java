@@ -39,6 +39,8 @@ public class ShopFragment extends Fragment{
     SwipeRefreshLayout swipe;
     NavigationView shop_view;
     MainActivity mainActivity = new MainActivity();
+    Shop_Package_Apdater adapter_rec1;
+    Shop_Rec_Adapter adapter_rec2;
 
     public ShopFragment(Context context){
         this.context = context;
@@ -169,15 +171,16 @@ public class ShopFragment extends Fragment{
 
 
         shop_rec1.setLayoutManager(manager);
-        Shop_Package_Apdater adapter_rec1 = new Shop_Package_Apdater(context, list);
+        adapter_rec1 = new Shop_Package_Apdater(context, list);
         shop_rec1.setAdapter(adapter_rec1);
+
     }
     public void setRec2(){
         manager = new LinearLayoutManager(context, RecyclerView.VERTICAL, false);
         //ArrayList<ProductDTO> list = new ArrayList<>();
 
         shop_rec2.setLayoutManager(manager);
-        Shop_Rec_Adapter adapter_rec2 = new Shop_Rec_Adapter(context);
+        adapter_rec2 = new Shop_Rec_Adapter(context);
         shop_rec2.setAdapter(adapter_rec2);
     }
 }

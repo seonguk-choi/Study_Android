@@ -61,14 +61,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.Review_Image_Activity"
-            android:exported="false"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"/>
-        <activity
-            android:name=".activity.Product_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.Product_Package_Activity"
-            android:exported="false" />
+            android:theme="@android:style/Theme.Holo.Dialog"/>
         <activity
             android:name=".activity.CamInfoActivity"
             android:exported="false" />

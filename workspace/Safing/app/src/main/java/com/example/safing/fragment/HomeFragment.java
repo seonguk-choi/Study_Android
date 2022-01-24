@@ -30,6 +30,7 @@ public class HomeFragment extends Fragment {
     ImageView home_search;
     MainActivity mainActivity = new MainActivity();
 
+
     public HomeFragment(Context context){
         this.context = context;
     }

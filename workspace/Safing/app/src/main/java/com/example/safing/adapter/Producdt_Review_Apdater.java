@@ -1,30 +1,22 @@
 package com.example.safing.adapter;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.safing.DTO.Product_PurchaseHistory_RecDTO;
 import com.example.safing.DTO.Product_ReviewlDTO;
 import com.example.safing.R;
-import com.example.safing.activity.Product_Activity;
-import com.example.safing.activity.Product_Package_Activity;
 import com.example.safing.activity.Review_Image_Activity;
 
 import java.util.ArrayList;
@@ -43,7 +35,6 @@ public class Producdt_Review_Apdater extends RecyclerView.Adapter<Producdt_Revie
         this.list = list;
         this.inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-
 
     @NonNull
     @Override
@@ -73,7 +64,6 @@ public class Producdt_Review_Apdater extends RecyclerView.Adapter<Producdt_Revie
 
         Drawable image1 = context.getResources().getDrawable(R.drawable.button_left_image_like1);
         Drawable image2 = context.getResources().getDrawable(R.drawable.button_left_image_like2);
-
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

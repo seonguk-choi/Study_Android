@@ -14,8 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.safing.DTO.SafeZoneRecDTO;
 import com.example.safing.R;
-import com.example.safing.activity.Product_Activity;
-import com.example.safing.activity.Product_Package_Activity;
+import com.example.safing.activity.MainActivity;
+import com.example.safing.fragment.Product_Fragment;
+import com.example.safing.fragment.Product_Package_Fragment;
 
 import java.util.ArrayList;
 
@@ -72,11 +73,14 @@ public class Shop_Rec_Adapter extends RecyclerView.Adapter<Shop_Rec_Adapter.View
             product_img1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "상품 상세내용", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(context, Product_Activity.class);
-                    context.startActivity(intent);
+                    int position = getAdapterPosition();
+                    if(listener != null){
+                        listener.onItemClick(ViewHoler.this,
+                                view, position);
+                    }
                 }
             });
+
             product_img2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
