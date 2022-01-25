@@ -1,7 +1,6 @@
 package com.example.safing.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,19 +11,21 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.safing.DTO.Product_InfoDTO;
 import com.example.safing.DTO.SafeZoneRecDTO;
 import com.example.safing.R;
-import com.example.safing.activity.MainActivity;
-import com.example.safing.fragment.Product_Fragment;
-import com.example.safing.fragment.Product_Package_Fragment;
+import com.example.safing.async.OnItemClick_Package_Listener;
+import com.example.safing.async.OnItemClick_product_Listener;
 
 import java.util.ArrayList;
 
-public class Shop_Rec_Adapter extends RecyclerView.Adapter<Shop_Rec_Adapter.ViewHolder> {
+public class Shop_Rec_Adapter extends RecyclerView.Adapter<Shop_Rec_Adapter.ViewHolder> implements OnItemClick_product_Listener {
     boolean bookMark = true;
     Context context;
-    ArrayList<SafeZoneRecDTO> list;
+    ArrayList<Product_InfoDTO> list;
     LayoutInflater inflater;
+
+    OnItemClick_product_Listener listener;
 
     public Shop_Rec_Adapter(Context context) {
         this.context = context;
@@ -33,12 +34,28 @@ public class Shop_Rec_Adapter extends RecyclerView.Adapter<Shop_Rec_Adapter.View
 
     }
 
+    public void addDto(Product_InfoDTO dto){
+        list.add(dto);
+    }
+
+    public void delDto(int position){
+        list.remove(position);
+    }
+
+    public void setOnItemClickListener(OnItemClick_product_Listener listener){
+        this.listener = listener;
+    }
+
+    public Product_InfoDTO getItem(int position){
+        return list.get(position);
+    }
+
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemview = inflater.inflate(R.layout.item_product_info, parent , false );
-        return new ViewHolder(itemview);
+        return new ViewHolder(itemview, this);
     }
 
     @Override
@@ -46,17 +63,23 @@ public class Shop_Rec_Adapter extends RecyclerView.Adapter<Shop_Rec_Adapter.View
 
     }
 
-
     @Override
     public int getItemCount() {
         return 5;
+    }
+
+    @Override
+    public void onItemClick_product(ViewHolder holderm, View view, int position) {
+        if(listener != null){
+            listener.onItemClick_product(holderm, view, position);
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView product_img1, product_img2;
         TextView product_tv1, product_tv2, product_tv3, product_tv4, product_tv5, product_tv6, product_tv7, product_tv8, product_tv9;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView, OnItemClick_product_Listener listener) {
             super(itemView);
             product_img1 = itemView.findViewById(R.id.product_img1);
             product_img2 = itemView.findViewById(R.id.product_img2);
@@ -75,8 +98,8 @@ public class Shop_Rec_Adapter extends RecyclerView.Adapter<Shop_Rec_Adapter.View
                 public void onClick(View v) {
                     int position = getAdapterPosition();
                     if(listener != null){
-                        listener.onItemClick(ViewHoler.this,
-                                view, position);
+                        listener.onItemClick_product(ViewHolder.this,
+                                v, position);
                     }
                 }
             });

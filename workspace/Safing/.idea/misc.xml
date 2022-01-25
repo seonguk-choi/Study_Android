@@ -37,10 +37,12 @@
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/tab_back.xml" value="0.1" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/tab_backgournd.xml" value="0.1" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/tab_background.xml" value="0.1037037037037037" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/tab_background1.xml" value="0.3425925925925926" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/tab_background2.xml" value="0.3037037037037037" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/tab_background3.xml" value="0.22864583333333333" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/tab_background4.xml" value="0.3764102564102564" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/tab_nomal_back.xml" value="0.3764102564102564" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/tab_nomal_back1.xml" value="0.3425925925925926" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/tab_nomal_back2.xml" value="0.3764102564102564" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/tab_selector.xml" value="0.15833333333333333" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/drawable/tab_selector_back.xml" value="0.1037037037037037" />
@@ -64,7 +66,10 @@
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/activity_splash.xml" value="0.1778115501519757" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/controller_exoplayer.xml" value="0.1778115501519757" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_address__repogitory_.xml" value="0.3515625" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_address_add.xml" value="0.36614583333333334" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_address_default.xml" value="0.36614583333333334" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_address_defualt.xml" value="0.36614583333333334" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_address_repogitory.xml" value="0.34173669467787116" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_blank.xml" value="0.2140625" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_detail_product.xml" value="0.3389355742296919" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_home.xml" value="0.25" />
@@ -77,11 +82,13 @@
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_product_cart.xml" value="0.22" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_product_package.xml" value="0.18568840579710144" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_product_package_activity.xml" value="0.2140625" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_product_purchase.xml" value="0.21510416666666668" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_product_purchase_history.xml" value="0.1" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_product_purchase_history_.xml" value="0.25052083333333336" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_review_product.xml" value="0.1" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/fragment_shop.xml" value="0.18" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/header_shop.xml" value="0.18009118541033434" />
+        <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/item_address_repository_rec.xml" value="0.36614583333333334" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/item_exoplayer_movie.xml" value="0.1" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/item_pager_movie.xml" value="0.23507462686567165" />
         <entry key="..\:/study_Android/workspace/Safing/app/src/main/res/layout/item_pager_movie1.xml" value="0.17603850050658562" />

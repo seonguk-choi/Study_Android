@@ -57,11 +57,8 @@
         android:theme="@style/Theme.Safing"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.Product_Purchase_Activity"
-            android:exported="false" />
-        <activity
             android:name=".activity.Review_Image_Activity"
-            android:theme="@android:style/Theme.Holo.Dialog"/>
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog"/>
         <activity
             android:name=".activity.CamInfoActivity"
             android:exported="false" />

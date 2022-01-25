@@ -24,7 +24,6 @@ import android.widget.Toast;
 
 import com.example.safing.R;
 import com.example.safing.activity.MainActivity;
-import com.example.safing.activity.Product_Purchase_Activity;
 import com.example.safing.adapter.Shop_Product_Pager_Adapter;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -120,8 +119,7 @@ public class Product_Package_Fragment extends Fragment {
         shop_product_btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, Product_Purchase_Activity.class);
-                startActivity(intent);
+                mainActivity.changeFragment(new Product_Purchase_Fragment(context));
             }
         });
 

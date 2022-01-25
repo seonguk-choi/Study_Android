@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,13 +15,12 @@ import com.example.safing.R;
 
 import java.util.ArrayList;
 
-public class Review_Image_Pager_Adapter extends RecyclerView.Adapter<Review_Image_Pager_Adapter.ViewHolder> {
-    boolean bookMark = true;
+public class Review_Image_pager_Adapter extends RecyclerView.Adapter<Review_Image_pager_Adapter.ViewHolder> {
     Context context;
     ArrayList<Shop_Product_PagerDTO> list;
     LayoutInflater inflater;
 
-    public Review_Image_Pager_Adapter(Context context) {
+    public Review_Image_pager_Adapter(Context context) {
         this.context = context;
         this.list = list;
         this.inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
