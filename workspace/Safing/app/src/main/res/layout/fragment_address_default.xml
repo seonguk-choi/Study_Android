@@ -53,9 +53,46 @@
                 android:fontFamily="@font/ibmplexsanslight"/>
             <EditText
                 android:id="@+id/address_defualt_tv2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:textColor="#8C8A8A"
+                android:backgroundTint="#85897B"
+                android:fontFamily="@font/ibmplexsanslight"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="-"
+                android:textStyle="bold"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="13dp"
+                android:gravity="center_vertical"
+                android:textColor="#000000"
+                android:fontFamily="@font/ibmplexsanslight"/>
+            <EditText
+                android:id="@+id/address_defualt_tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="#8C8A8A"
+                android:layout_weight="1"
+                android:backgroundTint="#85897B"
+                android:fontFamily="@font/ibmplexsanslight"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="-"
+                android:textStyle="bold"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="13dp"
+                android:gravity="center_vertical"
+                android:textColor="#000000"
+                android:fontFamily="@font/ibmplexsanslight"/>
+            <EditText
+                android:id="@+id/address_defualt_tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="#8C8A8A"
+                android:layout_weight="1"
                 android:backgroundTint="#85897B"
                 android:fontFamily="@font/ibmplexsanslight"/>
         </LinearLayout>
@@ -75,7 +112,7 @@
                 android:textColor="#000000"
                 android:fontFamily="@font/ibmplexsanslight"/>
             <EditText
-                android:id="@+id/address_defualt_tv3"
+                android:id="@+id/address_defualt_tv5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -133,7 +170,7 @@
                 android:backgroundTint="#85897B"
                 android:fontFamily="@font/ibmplexsanslight"/>
             <EditText
-                android:id="@+id/address_defualt_tv5"
+                android:id="@+id/address_defualt_tv6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
@@ -154,7 +191,7 @@
                 android:textColor="#000000"
                 android:fontFamily="@font/ibmplexsanslight"/>
             <EditText
-                android:id="@+id/address_defualt_tv6"
+                android:id="@+id/address_defualt_tv7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#8C8A8A"

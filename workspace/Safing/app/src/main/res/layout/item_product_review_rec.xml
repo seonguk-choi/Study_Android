@@ -139,7 +139,6 @@
                 android:text="10"
                 android:textColor="#8C8C8C"
                 android:background="@drawable/button_round2"
-                android:drawableLeft="@drawable/button_left_image_like1"
                 />
         </LinearLayout>
     </LinearLayout>

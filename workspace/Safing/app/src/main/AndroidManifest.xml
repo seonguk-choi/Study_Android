@@ -58,7 +58,8 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".activity.Review_Image_Activity"
-            android:theme="@style/Theme.AppCompat.DayNight.Dialog"/>
+            android:exported="false"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"/>
         <activity
             android:name=".activity.CamInfoActivity"
             android:exported="false" />

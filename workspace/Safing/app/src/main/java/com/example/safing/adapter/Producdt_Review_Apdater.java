@@ -78,6 +78,8 @@ public class Producdt_Review_Apdater extends RecyclerView.Adapter<Producdt_Revie
             item_product_review_img2 = itemView.findViewById(R.id.item_product_review_img2);
             item_product_review_btn = itemView.findViewById(R.id.item_product_review_btn);
 
+            image1.setBounds(0,3,54,60);
+            item_product_review_btn.setCompoundDrawables(image1, null,null,null);
 
             item_product_review_rating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
@@ -90,15 +92,16 @@ public class Producdt_Review_Apdater extends RecyclerView.Adapter<Producdt_Revie
             item_product_review_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(like_change== true) {
+                    if(like_change== false) {
                         Toast.makeText(context, "좋아요", Toast.LENGTH_SHORT).show();
+                        image1.setBounds(0,3,54,60);
                         item_product_review_btn.setCompoundDrawables(image2, null,null,null);
-                        like_change= false;
+                        like_change= true;
                     }else {
                         Toast.makeText(context, "좋아요 취소", Toast.LENGTH_SHORT).show();
+                        image2.setBounds(0,3,54,60);
                         item_product_review_btn.setCompoundDrawables(image1, null,null,null);
-
-                        like_change= true;
+                        like_change= false;
                     }
                 }
             });
