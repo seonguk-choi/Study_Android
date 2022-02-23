@@ -1,100 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/rec_round1"
     android:orientation="vertical"
-    android:paddingVertical="40dp">
+    android:layout_marginVertical="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background=" #735340"/>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
         android:orientation="horizontal">
         <CheckBox
             android:id="@+id/item_product_cart_rec_box"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
             android:buttonTint="#735340"
-            android:scaleX="1.2"
-            android:scaleY="1.2"/>
-    <ImageView
-        android:id="@+id/item_product_cart_rec_img"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/package2"
-        android:scaleType="fitXY"/>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:orientation="vertical"
-        android:weightSum="4"
-        android:layout_marginLeft="10dp">
-        <TextView
-            android:id="@+id/item_product_cart_rec_tv1"
+            android:layout_width="30dp"
+            android:layout_height="20dp"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="5dp">
+            <ImageView
+                android:id="@+id/item_product_cart_rec_img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="검색상품 태그 \n검색상품 태그 \n검색상품 태그"
-            android:textColor="#000000"
-            android:fontFamily="@font/ibmplexsanslight"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/item_product_cart_rec_tv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="상품명 들어올 위치상품명 들어올 위치상품명 들어올 위치"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/item_product_cart_rec_tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="원"
+                    android:layout_marginVertical="10dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="상품금액"
-                android:textStyle="bold"
-                android:gravity="center_vertical"
-                android:textColor="#000000"
-                android:fontFamily="@font/ibmplexsanslight"/>
-            <TextView
-                android:id="@+id/item_product_cart_rec_tv2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="0원"
-                android:gravity="center_vertical|end"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:fontFamily="@font/ibmplexsanslight"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="판매자 : (주) Safing"/>
         </LinearLayout>
+        <ImageView
+            android:id="@+id/item_product_cart_rec_btn1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/cancel"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="#41735340"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="10dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="배송비"
-                android:gravity="center_vertical"
-                android:textColor="#8C8C8C"
-                android:fontFamily="@font/ibmplexsanslight"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="수량 : "
+                android:textStyle="bold"
+                android:textColor="#477F83"/>
             <TextView
                 android:id="@+id/item_product_cart_rec_tv3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="무료"
-                android:gravity="center_vertical|end"
-                android:textColor="#8C8C8C"
-                android:fontFamily="@font/ibmplexsanslight"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개"
+                android:textColor="#477F83"
+                android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="금액 : "
+                    android:textStyle="bold"
+                    android:textColor="#477F83"/>
+                <TextView
+                    android:id="@+id/item_product_cart_rec_tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="원"
+                    android:textColor="#477F83"
+                    android:textStyle="bold"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-        <ImageButton
-            android:id="@+id/item_product_cart_rec_btn1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/cancel1"
-            android:scaleType="fitCenter"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/button_round1"/>
-    </LinearLayout>
-
 </LinearLayout>
+

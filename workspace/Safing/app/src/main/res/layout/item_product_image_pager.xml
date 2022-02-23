@@ -11,13 +11,6 @@
             android:layout_height="350dp"
             android:src="@drawable/package2"
             android:scaleType="fitXY"/>
-        <ImageView
-            android:id="@+id/product_img2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/bookmark1"
-            android:layout_gravity="end"
-            android:layout_margin="20dp"/>
         <TextView
             android:id="@+id/product_tv1"
             android:layout_width="wrap_content"

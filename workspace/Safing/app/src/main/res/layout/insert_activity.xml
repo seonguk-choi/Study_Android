@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:src="@drawable/camimg2" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="6"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="제목을 입력하세요"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#태그를 입력해주세요"
+                android:textSize="13dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:scaleType="fitXY"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/exo_ic_check"></ImageButton>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_margin="10dp"
+        android:text="내용을 입력해주세요!\n아래는 사진or동영상 입니다.\n 여기서 더넣을게 있나..?"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+        <ImageView
+            android:src="@drawable/camimg2"
+            android:layout_margin="5dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"/>
+        <ImageView
+            android:background="@color/teal_700"
+            android:src="@drawable/exo_icon_repeat_one"
+            android:layout_margin="5dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"/>
+        <ImageView
+            android:background="@color/teal_700"
+            android:src="@drawable/exo_ic_check"
+            android:layout_margin="5dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <TextView
+            android:layout_weight="1"
+            android:text="사진첨부한 파일이름 "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_weight="1"
+            android:text="사진첨부한 파일이름 "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_weight="1"
+            android:text="사진첨부한 파일이름 "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

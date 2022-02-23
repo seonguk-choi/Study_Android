@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Product_Cart_Fragment"
+    tools:context=".shop.fragment.Product_Cart_Fragment"
     android:background="#F9F9FB"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
@@ -48,7 +48,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="장바구니"
-                android:textSize="25dp"
+                android:textSize="20dp"
+                android:paddingVertical="5dp"
                 android:textColor="#F9F9FB"
                 android:textAlignment="center"
                 android:background="#85897B"
@@ -58,10 +59,6 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_weight="9">
-                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/product_cart_swipe">
                     <ScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
@@ -72,7 +69,7 @@
                             <androidx.recyclerview.widget.RecyclerView
                                 android:id="@+id/product_cart_rec1"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_marginBottom="30dp"
                                 android:layout_marginHorizontal="20dp"/>
                             <LinearLayout
@@ -111,98 +108,97 @@
                                     android:drawableLeft="@drawable/button_left_image_cancel1"
                                     />
                             </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingVertical="30dp"
-                            android:paddingHorizontal="20dp"
-                            android:weightSum="3">
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingVertical="10dp"
+                                android:paddingHorizontal="20dp"
+                                android:weightSum="3">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="총 상품금액"
-                                    android:gravity="center_vertical"
-                                    android:textColor="#000000"
-                                    android:fontFamily="@font/ibmplexsanslight"/>
-                                <TextView
-                                    android:id="@+id/product_cart_tv1"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="총 상품금액"
+                                        android:gravity="center_vertical"
+                                        android:textColor="#000000"
+                                        android:fontFamily="@font/ibmplexsanslight"/>
+                                    <TextView
+                                        android:id="@+id/product_cart_tv1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="0원"
+                                        android:gravity="center_vertical|end"
+                                        android:textColor="#000000"
+                                        android:fontFamily="@font/ibmplexsanslight"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="0원"
-                                    android:gravity="center_vertical|end"
-                                    android:textColor="#000000"
-                                    android:fontFamily="@font/ibmplexsanslight"/>
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:orientation="horizontal"
-                                android:layout_marginVertical="20dp">
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:layout_marginVertical="20dp">
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="배송비"
+                                        android:gravity="center_vertical"
+                                        android:textColor="#000000"
+                                        android:fontFamily="@font/ibmplexsanslight"/>
+                                    <TextView
+                                        android:id="@+id/product_cart_tv2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="0원"
+                                        android:gravity="center_vertical|end"
+                                        android:textColor="#000000"
+                                        android:fontFamily="@font/ibmplexsanslight"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="배송비"
-                                    android:gravity="center_vertical"
-                                    android:textColor="#000000"
-                                    android:fontFamily="@font/ibmplexsanslight"/>
-                                <TextView
-                                    android:id="@+id/product_cart_tv2"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="0원"
-                                    android:gravity="center_vertical|end"
-                                    android:textColor="#000000"
-                                    android:fontFamily="@font/ibmplexsanslight"/>
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="총 주문금액"
-                                    android:textStyle="bold"
-                                    android:textSize="20dp"
-                                    android:gravity="center_vertical"
-                                    android:textColor="#000000"
-                                    android:fontFamily="@font/ibmplexsanslight"/>
-                                <TextView
-                                    android:id="@+id/product_cart_tv3"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="0원"
-                                    android:gravity="center_vertical|end"
-                                    android:textStyle="bold"
-                                    android:textSize="20dp"
-                                    android:textColor="#000000"
-                                    android:fontFamily="@font/ibmplexsanslight"/>
-                            </LinearLayout>
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="총 주문금액"
+                                        android:textStyle="bold"
+                                        android:textSize="20dp"
+                                        android:gravity="center_vertical"
+                                        android:textColor="#000000"
+                                        android:fontFamily="@font/ibmplexsanslight"/>
+                                    <TextView
+                                        android:id="@+id/product_cart_tv3"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="0원"
+                                        android:gravity="center_vertical|end"
+                                        android:textStyle="bold"
+                                        android:textSize="20dp"
+                                        android:textColor="#000000"
+                                        android:fontFamily="@font/ibmplexsanslight"/>
+                                </LinearLayout>
                         </LinearLayout>
                         </LinearLayout>
                     </ScrollView>
-                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_weight="1"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp">
                 <Button
                     android:id="@+id/product_cart_btn2"
                     android:layout_width="match_parent"

@@ -2,10 +2,9 @@ package com.example.safing.async;
 
 import android.view.View;
 
-import com.example.safing.adapter.Shop_Package_Apdater;
-import com.example.safing.adapter.Shop_Rec_Adapter;
+import com.example.safing.shop.adapter.Shop_Rec_Adapter;
 
-public interface OnItemClick_product_Listener {
-    public void onItemClick_product(Shop_Rec_Adapter.ViewHolder holderm,
+public interface OnItemClick_Product_Listener {
+    void onItemClick_product(Shop_Rec_Adapter.ViewHolder holderm,
                                     View view, int position);
 }

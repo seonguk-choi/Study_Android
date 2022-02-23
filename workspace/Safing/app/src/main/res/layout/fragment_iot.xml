@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.IoTFragment"
+    tools:context=".iot.fragment.IoTFragment"
     android:background="#F9F9FB"
     android:orientation="vertical">
     <LinearLayout

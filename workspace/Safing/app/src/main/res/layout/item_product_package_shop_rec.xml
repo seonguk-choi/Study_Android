@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_product_package_shop_linear"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/item_product_package_shop_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground"
+                android:scaleType="fitXY"
+                tools:ignore="UseAppTint"/>
+            <TextView
+                android:id="@+id/item_product_package_shop_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#F9F9FB"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="#광주광역시\n#서구\n#농성동"
+                android:background="#00000000">
+            </TextView>
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

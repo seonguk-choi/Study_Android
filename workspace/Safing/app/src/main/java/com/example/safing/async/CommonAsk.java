@@ -23,10 +23,11 @@ public class CommonAsk extends AsyncTask<String,String,InputStream> {
     HttpPost httpPost; //url을 담을 객체
 
     MultipartEntityBuilder builder;//파라메터,파일 등등을 보내기위한 객체
-    final String HTTPIP = "http://192.168.0.12";//IP
-    final String SVRPATH = "/middle/"; //
+    static final String HTTPIP = "http://192.168.0.22";//IP
+    final String SVRPATH = "/safing/"; //
+    static final public String FILE_PATH = HTTPIP +":80/safing/resources/";
     String mapping ;
-    private String postUrl ;//
+    private String postUrl ;
 
     public ArrayList<AskParam> params ;
     public ArrayList<AskParam> fileprams;
@@ -41,7 +42,6 @@ public class CommonAsk extends AsyncTask<String,String,InputStream> {
         this.params.add(new AskParam(key, value));
     }
 
-    //어싱크테스크를 excute(실행) ↓
     @Override
     protected InputStream doInBackground(String... strings) {
         postUrl = HTTPIP + SVRPATH + mapping ;
@@ -72,22 +72,22 @@ public class CommonAsk extends AsyncTask<String,String,InputStream> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //rtnString(in);
+
         return in;
     }
-    //DAO , COMMON 공통으로 사용할 클래스로 이동.
+
     public String rtnString(InputStream inputStream)  {
         try{
 
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-        StringBuilder stringBuilder = new StringBuilder();
-        String line = null;
-        while( (line = reader.readLine()) != null  ){
-            stringBuilder.append( line + "\n");
-        }
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder stringBuilder = new StringBuilder();
+            String line = null;
+            while( (line = reader.readLine()) != null  ){
+                stringBuilder.append( line + "\n");
+            }
 
-        return stringBuilder.toString();
+            return stringBuilder.toString();
         }catch (IOException e){
 
         }

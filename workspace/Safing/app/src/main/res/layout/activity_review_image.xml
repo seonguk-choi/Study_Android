@@ -2,17 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="350dp"
     android:layout_height="300dp"
-    tools:context=".activity.Review_Image_Activity"
+    tools:context=".shop.activity.Review_Image_Activity"
     android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <androidx.viewpager2.widget.ViewPager2
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/Review_Image_Rec"
-        android:orientation="horizontal"/>
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/Review_Image_Rec"
+            android:orientation="horizontal"/>
     </FrameLayout>
 </LinearLayout>

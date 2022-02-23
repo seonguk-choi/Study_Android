@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Product_Package_Fragment"
+    tools:context=".shop.fragment.Product_Package_Fragment"
     android:background="#F9F9FB"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
@@ -132,13 +132,95 @@
                                 android:textColor="#000000"
                                 android:fontFamily="@font/nanumgothic"
                                 android:layout_marginHorizontal="20dp" />
-                            <ImageView
-                                android:id="@+id/shop_product_img1"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="200dp"
+                                android:layout_height="150dp"
                                 android:layout_margin="20dp"
-                                android:src="@drawable/camimg2"
-                                android:scaleType="fitXY"/>
+                                android:orientation="horizontal"
+                                android:weightSum="2"
+                                android:padding="20dp"
+                                android:background="@drawable/button_round8">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:weightSum="3">
+                                    <TextView
+                                        android:id="@+id/product_package_tv1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="상품명"
+                                        android:textStyle="bold"
+                                        android:textColor="#000000"
+                                        android:padding="10dp"
+                                        android:fontFamily="@font/nanumgothic"
+                                        android:gravity="center_vertical"/>
+                                    <TextView
+                                        android:id="@+id/product_package_tv2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="상품명"
+                                        android:textStyle="bold"
+                                        android:textColor="#000000"
+                                        android:padding="10dp"
+                                        android:fontFamily="@font/nanumgothic"
+                                        android:gravity="center_vertical"/>
+                                    <TextView
+                                        android:id="@+id/product_package_tv3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="상품명"
+                                        android:textStyle="bold"
+                                        android:textColor="#000000"
+                                        android:padding="10dp"
+                                        android:fontFamily="@font/nanumgothic"
+                                        android:gravity="center_vertical"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:weightSum="3">
+                                    <TextView
+                                        android:id="@+id/product_package_tv4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="상품명"
+                                        android:textStyle="bold"
+                                        android:textColor="#000000"
+                                        android:padding="10dp"
+                                        android:fontFamily="@font/nanumgothic"
+                                        android:gravity="center_vertical"/>
+                                    <TextView
+                                        android:id="@+id/product_package_tv5"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="상품명"
+                                        android:textStyle="bold"
+                                        android:textColor="#000000"
+                                        android:padding="10dp"
+                                        android:fontFamily="@font/nanumgothic"
+                                        android:gravity="center_vertical"/>
+                                    <TextView
+                                        android:id="@+id/product_package_tv6"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="상품명"
+                                        android:textStyle="bold"
+                                        android:textColor="#000000"
+                                        android:padding="10dp"
+                                        android:fontFamily="@font/nanumgothic"
+                                        android:gravity="center_vertical"/>
+                                </LinearLayout>
+                            </LinearLayout>
                             <com.google.android.material.tabs.TabLayout
                                 android:layout_marginTop="20dp"
                                 android:id="@+id/shop_product_tab1"
@@ -159,24 +241,6 @@
                         </LinearLayout>
                     </ScrollView>
                 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:layout_gravity="center">
-                <Button
-                    android:id="@+id/shop_product_btn1"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="구매하기"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/nanumgothic"
-                    android:layout_marginHorizontal="20dp"
-                    android:backgroundTint="#735340"
-                    android:layout_alignParentBottom="true"
-                    />
             </LinearLayout>
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

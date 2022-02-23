@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="설정"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/test_gizang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="프로필 수정"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="15dp"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/test2"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="알림"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"/>
+
+        <Switch
+
+            android:textOn="켜기"
+            android:textOff="끄기"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="버전"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="최신버전"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginRight="15dp"
+            android:gravity="right"/>
+  </LinearLayout>
+    <TextView
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="이용약관"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:gravity="left"
+        android:layout_marginLeft="15dp"/>
+    <TextView
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="개인정보 처리방침"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:gravity="left"
+        android:layout_marginLeft="15dp"/>
+    <TextView
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="위치정보 이용약관"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:gravity="left"
+        android:layout_marginLeft="15dp"/>
+
+    <TextView
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:background="@color/white"
+        android:gravity="left"
+        android:text="공지사항"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="캠핑장 빈자리 알림"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:gravity="left"
+        android:layout_marginLeft="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="로그아웃"
+       android:textStyle="bold"
+        android:textSize="25dp"
+        android:gravity="left"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="35dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="USERID"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:gravity="right"
+            android:layout_marginLeft="235dp"
+            android:layout_marginTop="40dp"/>
+
+    </LinearLayout>
+</LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/faq"
+        app:fabSize="mini"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toTopOf="@id/fab"
+        app:layout_constraintBottom_toBottomOf="@id/fab"
+        app:layout_constraintStart_toStartOf="@id/fab"
+        app:layout_constraintEnd_toEndOf="@id/fab"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/question"
+        app:fabSize="mini"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toTopOf="@id/fab"
+        app:layout_constraintBottom_toBottomOf="@id/fab"
+        app:layout_constraintStart_toStartOf="@id/fab"
+        app:layout_constraintEnd_toEndOf="@id/fab"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:src="@drawable/plus"
+        android:backgroundTint="@color/white"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

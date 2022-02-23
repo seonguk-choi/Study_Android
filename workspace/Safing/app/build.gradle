@@ -14,7 +14,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -28,11 +27,6 @@ android {
     useLibrary 'org.apache.http.legacy'
     /*apacthe httpClient라는 기능을 사용하기위한것.*/
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
 }
 
 dependencies {
@@ -41,6 +35,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
     testImplementation 'junit:junit:4.+'
@@ -75,4 +70,10 @@ dependencies {
     implementation "com.google.android.exoplayer:exoplayer-ui:2.13.0"
     implementation "com.google.android.exoplayer:exoplayer-hls:2.13.0"
 
+
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.9'
+
+    // Swipe Refresh Layout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 }

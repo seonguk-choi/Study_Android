@@ -1,0 +1,9 @@
+diff a/Safing Android/Safing/.idea/misc.xml b/Safing Android/Safing/.idea/misc.xml	(rejected hunks)
+@@ -13,6 +13,7 @@
+         <entry key="..\:/Study_Android/WorkSpace/Safing/app/src/main/res/layout/activity_setting.xml" value="0.1824074074074074" />
+         <entry key="..\:/Study_Android/WorkSpace/Safing/app/src/main/res/layout/activity_splash.xml" value="0.3020833333333333" />
+         <entry key="..\:/Study_Android/WorkSpace/Safing/app/src/main/res/layout/fragment_detail_product.xml" value="0.1824074074074074" />
++<<<<<<< HEAD
+         <entry key="..\:/Study_Android/WorkSpace/Safing/app/src/main/res/layout/fragment_home.xml" value="0.36614583333333334" />
+         <entry key="..\:/Study_Android/WorkSpace/Safing/app/src/main/res/layout/fragment_iot.xml" value="0.1824074074074074" />
+         <entry key="..\:/Study_Android/WorkSpace/Safing/app/src/main/res/layout/fragment_login.xml" value="0.2046875" />

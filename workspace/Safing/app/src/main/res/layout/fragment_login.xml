@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="브랜드 로그인"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="아이디"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="아이디를 입력하세요"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="비밀번호"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호를 입력하세요"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="소셜 로그인 또는 회원가입"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold|normal"
+        android:layout_marginTop="50dp"/>
+
+
+
+        <Button
+
+            android:id="@+id/login_main1"
+            android:text="FaceBook Login"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="#EFE9E9"
+            android:background="@drawable/img_2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"/>
+
+        <Button
+            android:id="@+id/login_main2"
+            android:text="Google Login"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:background="@drawable/img_1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="7dp"/>
+    <Button
+        android:id="@+id/login_main3"
+        android:text="twitter Login"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:background="@drawable/btn_signin_twitter"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/member_insert"
+        android:layout_width="376dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:text="회원가입"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:backgroundTint="#8BCA17"/>
+
+
+    <Button
+
+        android:id="@+id/login_main4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:backgroundTint="#A89D9D"
+        android:text="로그인"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
